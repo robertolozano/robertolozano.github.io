@@ -1,0 +1,71 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML =
+                    h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+        
+    </head>
+    
+    
+    <body onload="startTime()">
+        
+        <div class="navbar">
+            <a href="hello.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="0-Successful%20Question-Prompts.pdf" target="_blank">RESUME</a>
+        </div>
+        
+        <div class="landingsection">
+            
+            <h1>Roberto Lozano</h1> 
+            <p id="p1">UC Davis Second Year Undergraduate.</p>
+            <p id="p2">Studying Computer Science.</p>
+            
+            <div id="txt"></div>
+            
+        </div>
+        
+        
+        <div class="secondsection">
+            
+            <h1>Another section of my website</h1> 
+            <img src="images/lightHouse.jpg" alt="lighthouse" class="pic">
+            
+        </div>
+        
+        <div class="socialmedia">
+            <h1>follow me on social media</h1>
+            
+            <a target="_blank"     href="https://www.facebook.com/roberto.lozano.961"><i class="fab fa-facebook-square" id="facebook"></i></a>
+            
+            <a target="_blank" href="https://www.instagram.com/rlozano_/?hl=en">
+            <i class="fab fa-instagram" id="instagram"></i></a>
+            
+            <a target="_blank" href="https://twitter.com/rlozano__"><i class="fab fa-twitter" id="twitter"></i></a>
+
+
+
+        </div>
+        
+    </body>
+</html>
