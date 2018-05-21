@@ -57,7 +57,7 @@ p {
 }
 
 .landingsection {
-    background-image: url(../images/beachShore.jpg);
+    background-image: url(beachShore.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
