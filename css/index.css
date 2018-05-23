@@ -1,27 +1,71 @@
 html,body {
-    margin: 0;
+    margin: -3;
     padding: 0;
 }
 
-h1 {
-    font-family: 'Indie Flower', cursive;
+#h1 {
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     padding-top: 70px;   
+    font-size: 45;
+}
+
+#h2 {
+    margin-top: 40;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-top: 11;   
     font-size: 40;
 }
 
-p {
+#h3 {
+    margin-top: 2;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-top: -200;   
+    font-size: 40;
+}
+
+#h4 {
+    margin-top: 2;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-top: 12;   
+    font-size: 40;
+}
+
+#p1 {
     font-family: 'Anton', sans-serif;
+    font-size: 20;
+}
+
+#p2 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 20;
+}
+
+#p3 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 25;
+    margin-top: -20;
+}
+
+#p4 {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
     font-size: 20
 }
 
-.pic {
+.seal {
     display: block;
+    margin-top: -35;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50px;
-    height: 350;
-    width:550;
+    height: 300;
+    width:300;
 }
 
 .navbar a:hover{
@@ -75,16 +119,12 @@ p {
 }
 
 .secondsection {
-    margin-bottom: -34;
-    height: 80vh;
+    height: 84vh;
     background-color: lightblue;
-}
-
-.secondsection h1 {
-    padding-top: 15px;
-    margin-bottom: 5;
-    font-size: 35;
-    text-align: center;
+    margin-top: -40;
+    margin-bottom: -8;
+    background-color: tomato;
+    background-image: url("https://www.transparenttextures.com/patterns/psychedelic.png");
 }
 
 .socialmedia {
@@ -93,11 +133,6 @@ p {
     text-align: center;
     background-color: #94c8ff;
     background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-}
-
-.socialmedia h1{
-    padding-top: 6;
-    font-size: 50;
 }
 
 #facebook {
