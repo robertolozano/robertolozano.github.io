@@ -1,0 +1,130 @@
+#body1{
+    background-color: ghostwhite;
+}
+
+#nav1{
+    background-color: skyblue;
+}
+
+#nav1 a, #nav1 a{
+    color: black;
+}
+
+#nav1 ul :hover, #nav1 a:hover{
+    color:floralwhite;
+}
+
+#nav1 #navbar a{
+    font-family: 'Rubik', sans-serif;
+}
+
+#nav1 .Brand a{
+    font-family:'Rubik', sans-serif;
+}
+
+#clockSection {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    margin-top: 51px;
+    margin-bottom: 0px;
+    font-size: 40;
+    height: 6vh;
+}
+
+#txt {
+    margin-top: 15px;
+    color: black;
+    font-size: 60;
+}
+
+#firstSection{
+    margin-top: 51px;
+}
+
+#firstSection img{
+  border-radius: 25px;
+  width:100%;
+  margin-bottom:20px;
+  margin-top: 20px;
+}
+
+.firstSection-right h1{
+    margin-top:20px;
+    font-family: 'Anton', sans-serif;
+}
+
+.firstSection-right p{
+    font-family:'Rubik', sans-serif;
+}
+
+#secondSection{
+    margin-top: 5vh;
+    margin-bottom: 0vh;
+    background-color: gainsboro;
+}
+
+#secondSection img{
+  border-radius: 25px;
+  width:100%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+#secondSection h2 {
+    margin-top: 0;
+    margin-bottom: 10;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 30;
+    text-align: center;
+    font-style: italic;
+}
+
+#secondSection p {
+    margin-bottom: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20;
+    text-align: center;
+}
+
+.socialmedia {
+    height: 180;
+    text-align: center;
+    background-color: skyblue;
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+}
+
+.socialmedia h2,.socialmedia p{
+    font-size: 50;
+    color:aliceblue;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Indie Flower', sans-serif;
+}
+
+#facebook,#instagram,#twitter {
+    font-size: 50;
+    color:aliceblue;
+}
+
+/*
+.navbar{
+    font-family: 'Anton', sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    background-color: transparent;
+    top: 0; 
+    width: 100%;
+    z-index: 100;
+    font-size: 30px;
+}
+
+/* Links inside the navbar */
+/*
+.navbar a{
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}*/
