@@ -1,17 +1,17 @@
 <DOCTYPE html>
 <html>
     <head>
-        <title>Roberto's Website!</title>
+        <title>Roberto Lozano</title>
         
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
         <link rel="manifest" href="/site.webmanifest">
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         
-        <link type="text/css" rel="stylesheet" href="css/index.css">
+        <link type="text/css" rel="stylesheet" href="../css/index.css">
         <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Roboto+Slab|Rubik:300i|Tajawal:700" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,29 +19,71 @@
         
         <!--clock code -->
         <script>
+            
             function startTime() {
                 var today = new Date();
                 var h = today.getHours();
                 var m = today.getMinutes();
                 var s = today.getSeconds();
+                var day = today.getDate();
+                var month = today.getMonth();
+                var textMonth;
+                var year = today.getFullYear();
+                var ampm = "am";
+                
+                textMonth = translateMonth(month);
+                ampm = timeOfDay(h);
                 m = checkTime(m);
                 s = checkTime(s);
                 document.getElementById('txt').innerHTML =
-                    h + ":" + m + ":" + s;
+                    h + ":" + m + ":" + s + " " + ampm + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0" + day + " " + textMonth + " " + year;
+                
                 var t = setTimeout(startTime, 500);
             }
+            
+             function translateMonth(i){
+                if(i == 0){return "January";}
+                if(i == 1){return "February";}
+                if(i == 2){return "March";}
+                if(i == 3){return "April";}
+                if(i == 4){return "May";}
+                if(i == 5){return "June";}
+                if(i == 6){return "July";}
+                if(i == 7){return "August";}
+                if(i == 8){return "September";}
+                if(i == 9){return "October";}
+                if(i == 10){return "November";}
+                if(i == 11){return "December";}
+                else{
+                    return "error";
+                }
+            }
+            
+            function timeOfDay(i){
+                if(i >= 12)
+                {
+                    return "PM";
+                }
+                else{
+                    return "AM";
+                }
+            }
+            
             function checkTime(i) {
                 if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
                 return i;
-            }
+            }   
         </script>
+        
+        
         
     </head>
     
     <!--start of body-->
     <body onload="startTime()" id="body1">
         
-        <nav class="navbar navbar-default navbar-fixed-top" id="nav1">
+        <nav class="navbar navbar-default navbar-fixed-top" id="nav1">    
+            
             <div class="container">
                 <div class="navbar-header">   
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -50,8 +92,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="Brand">
+                    <div class="Brand nav navbar-nav navbar-left">
                         <a class="navbar-brand" href="#social_media">Roberto Lozano</a>
+                        <div id="txt"></div>
                     </div>
                 </div>
                 
@@ -64,11 +107,12 @@
                         <li id="resume"><a href="../files/Resume.pdf" target="_blank">RESUME</a></li>
                     </ul>
                     
-                </div>
-                    
+                </div>    
             </div>
+
         </nav>       
-            
+        
+        <!--    
         <section id="clockSection">
             <div class="container">
                 <div class="row">
@@ -79,24 +123,23 @@
                 </div>
             </div>
         </section>
-            
+        -->
+        
         <section id="firstSection">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="firstSection-left">
-                            <img src="../images/favicon.png">
-                        </div>
-                    </div>
                     
-                    <div class="col-md-6 col-sm-6">
+                    <div id="name"> <!--class="col-md-6 col-sm-6" -->
+                        
                         <div class="firstSection-right">
                             <h1 id="h1">Roberto Lozano</h1>
-                            <p id="p1">UC Davis Second Year Undergraduate.</p>
+                            <p id="p1">UC Davis Third Year Undergraduate Student.</p>
                             <p id="p2">Studying Computer Science.</p>
                         </div>
+                        
                         <br>
                         <a class="btn btn-default btn-lg showcase-btn">Read More</a>
+                    
                     </div>
                 </div>
             </div>
@@ -118,22 +161,42 @@
                             <img src="../images/512px-The_University_of_California_Davis.svg.png" alt="UCseal" class="seal">
                             <h2 id="h3">Experienced or have worked with</h2>
                             <div class="list">
-                                <p id="list1">•C/C++</p><p id="list2">•HTML</p>
-                                <p id="list3">•CSS</p>
+                                <p id="list1">•C/C++</p><p id="list2">•HTML&nbsp&nbsp</p>
+                                <p id="list3">•CSS&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                                 <p id="list4">•Python</p>
+                                <p id="list5">•Arduino</p>
+                                <p id="list6">•LinkBot</p>
                             </div>
-                            <a class="btn btn-default btn-lg">Read More</a>
+                            <a id="readmore2" class="btn btn-default btn-lg">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!--<hr>-->
+        
+        <section id = "thirdSection">
+            <div class= "containter">
+                <div class="row">
+                    
+                    <video width="480" height="360" autoplay loop muted>
+                    <source src="/video/20180828_165205_2.mp4" type="video/mp4">
+
+                    </video>
+                    
+                    <video width="480" height="360" autoplay loop muted>
+                    <source src="/video/20180820_170522_2.mp4" type="video/mp4">
+
+                    </video>
+                    
+                </div>
+            </div>
+        </section>
 
         <footer class="socialmedia" id="social_media">
             <div id="socialinfo">
             
-                <h2 id="h4">Follow me on social media</h2>
+                <h2 id="h4">Find Me On:</h2>
                 
                     <div id="socialIcons">
 
@@ -146,7 +209,8 @@
                         
                     </div>
 
-                <p id="p4">Or contact me through email: rlozano@ucdavis.edu</p>
+                <p id="p4">rlozano@ucdavis.edu</p>
+                <p id="p5">707-245-6435</p>
                 
             </div>
         </footer> 
@@ -246,15 +310,29 @@
           distance:'300px',
           viewFactor: 0.2
         });
+        sr.reveal('.secondSection-right #list5', {
+          delay: 3200,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
+        sr.reveal('.secondSection-right #list6', {
+          delay: 3900,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
         sr.reveal('#socialinfo h2, #socialinfo p', {
-          delay: 500,
+          delay: 1000,
           duration: 1000,
           origin:'right',
-          distance:'px',
+          distance:'0px',
           viewFactor: 0.2
         });
         sr.reveal('#socialIcons', {
-          delay: 1000,
+          delay: 1700,
           duration: 1000,
           origin:'right',
           distance:'0px',
@@ -282,4 +360,5 @@
     </script>
         
     </body>
+    
 </html>
