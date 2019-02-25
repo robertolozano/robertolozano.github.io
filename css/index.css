@@ -1,9 +1,15 @@
+body{ 
+    overflow-x:hidden; 
+}
+
 #body1{
     background-color: ghostwhite;
 }
 
 #nav1{
     background-color: skyblue;
+    width: 100vw;
+    position: absolute;
 }
 
 #nav1 a, #nav1 a{
@@ -22,30 +28,28 @@
     font-family:'Rubik', sans-serif;
 }
 
-#clockSection {
+#txt {
     font-family: 'Anton', sans-serif;
+    margin-top: 15;
+    margin-left: 0vw;
+    display: inline-block;
     text-align: center;
-    margin-top: 51px;
-    margin-bottom: 0px;
-    font-size: 40;
-    height: 6vh;
+    vertical-align: top;
 }
 
-#txt {
-    margin-top: 15px;
-    color: black;
-    font-size: 60;
+#navbar-options{
+    display: inline-block;
+}
+
+#name {
+    margin-top: 50px;
+    text-align: center;
 }
 
 #firstSection{
     margin-top: 51px;
-}
-
-#firstSection img{
-  border-radius: 25px;
-  width:100%;
-  margin-bottom:20px;
-  margin-top: 20px;
+    height: 40vh;
+    background-color: EDF9FE;
 }
 
 .firstSection-right h1{
@@ -57,10 +61,20 @@
     font-family:'Rubik', sans-serif;
 }
 
+.secondSection-right #h2{
+    margin-top: 10;
+}
+
+.secondSection-right #h3{
+    font-family:'Rubik', sans-serif;
+}
+
 #secondSection{
-    margin-top: 5vh;
-    margin-bottom: 0vh;
-    background-color: gainsboro;
+    margin-bottom: -5;
+    background-color: EDF9FE;/*f1f1f1;*/
+    opacity: inherit;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 #secondSection img{
@@ -86,19 +100,38 @@
     text-align: center;
 }
 
+#readmore2{
+    margin-left: 220;
+    margin-top: 30;
+}
+
+
+#thirdSection{
+    height: 55vh;
+    background-color: EDF9FE;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+
+#thirdSection video{
+    margin-top: 10;
+    margin-left: 150
+
+}
+
 .socialmedia {
-    height: 180;
+    height: 35vh;
     text-align: center;
     background-color: skyblue;
-    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
 }
 
 .socialmedia h2,.socialmedia p{
     font-size: 50;
     color:aliceblue;
     margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Indie Flower', sans-serif;
+    margin-bottom: -5;
+    font-family: 'Rubik', sans-serif;
 }
 
 #facebook,#instagram,#twitter {
