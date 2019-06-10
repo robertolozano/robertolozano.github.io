@@ -3,18 +3,19 @@
     <head>
         <title>Roberto Lozano</title>
 
-        <!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
         <link rel="manifest" href="/site.webmanifest">
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
-        <link type="text/css" rel="stylesheet" href="/css/index.css">
+        <link type="text/css" rel="stylesheet" href="css/index.css">
+
         <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Roboto+Slab|Rubik:300i|Tajawal:700" rel="stylesheet">
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
         <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
         <!--clock code -->
@@ -30,13 +31,15 @@
                 var textMonth;
                 var year = today.getFullYear();
                 var ampm = "am";
+                var hour;
 
                 textMonth = translateMonth(month);
                 ampm = timeOfDay(h);
                 m = checkTime(m);
                 s = checkTime(s);
+                hour = militaryToStandard(h);
                 document.getElementById('txt').innerHTML =
-                    h + ":" + m + ":" + s + " " + ampm + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0" + day + " " + textMonth + " " + year;
+                    hour + ":" + m + ":" + s + " " + ampm + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0" + day + " " + textMonth + " " + year;
 
                 var t = setTimeout(startTime, 500);
             }
@@ -69,6 +72,16 @@
                 }
             }
 
+            function militaryToStandard(i){
+                if(i > 12)
+                {
+                    return i-12;
+                }
+                else{
+                    return i;
+                }
+            }
+
             function checkTime(i) {
                 if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
                 return i;
@@ -82,19 +95,25 @@
     <!--start of body-->
     <body onload="startTime()" id="body1">
 
-        <nav class="navbar navbar-default navbar-fixed-top" id="nav1">
+        <nav class="navbar navbar-default navbar-fixed-right" id="nav1">
 
             <div class="container">
+
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                    <button id="button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
                     <div class="Brand nav navbar-nav navbar-left">
-                        <a class="navbar-brand" href="#social_media">Roberto Lozano</a>
+
+                        <a id="navbarName" class="navbar-brand" href="#footerSection">Roberto Lozano</a>
+
                         <div id="txt"></div>
+
                     </div>
                 </div>
 
@@ -104,7 +123,7 @@
                         <li id="home"><a href="index.html">HOME</a></li>
                         <li id="about"><a href="about.html">ABOUT</a></li>
                         <li id="portfolio"><a href="portfolio.html">PORTFOLIO</a></li>
-                        <li id="resume"><a href="Resume.pdf" target="_blank">RESUME</a></li>
+                        <li id="resume"><a href="../files/Resume.pdf" target="_blank">RESUME</a></li>
                     </ul>
 
                 </div>
@@ -112,24 +131,12 @@
 
         </nav>
 
-        <!--  TEST TO SEE  
-        <section id="clockSection">
-            <div class="container">
-                <div class="row">
-                    <div class="clock">
-
-                        <div id="txt"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        -->
 
         <section id="firstSection">
             <div class="container">
                 <div class="row">
 
-                    <div id="name"> <!--class="col-md-6 col-sm-6" -->
+                    <div id="name" class="col-md-6 col-sm-6">
 
                         <div class="firstSection-right">
                             <h1 id="h1">Roberto Lozano</h1>
@@ -137,8 +144,15 @@
                             <p id="p2">Studying Computer Science.</p>
                         </div>
 
+                        <!--
                         <br>
-                        <a class="btn btn-default btn-lg showcase-btn">Read More</a>
+                        <a id = "readmore1" class="btn btn-default btn-lg showcase-btn">Read More</a>
+                        -->
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <img id ="parkPic" src="images/goodlooking.jpeg">
 
                     </div>
                 </div>
@@ -149,16 +163,16 @@
         <section id="secondSection">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
+                    <!--<div class="col-md-6 col-sm-6">
                         <div class="secondSection-left">
-                            <img src="images/IMG-0964-01 (1).jpeg">
+                            <img src="../images/me.png">
                         </div>
-                    </div>
+                    </div>-->
                     <div class="col-md-6 col-sm-6">
                         <div class="secondSection-right">
 
                             <h2 id="h2">Education</h2>
-                            <img src="../images/512px-The_University_of_California_Davis.svg.png" alt="UCseal" class="seal">
+                            <img id="seal" src="../images/512px-The_University_of_California_Davis.svg.png" alt="UCseal" class="seal">
                             <h2 id="h3">Experienced or have worked with</h2>
                             <div class="list">
                                 <p id="list1">•C/C++</p><p id="list2">•HTML&nbsp&nbsp</p>
@@ -166,8 +180,14 @@
                                 <p id="list4">•Python</p>
                                 <p id="list5">•Arduino</p>
                                 <p id="list6">•LinkBot</p>
+                                <p id="list7">•GO</p>
+                                <p id="list8">•Lisp</p>
+                                <p id="list9">•Prolog</p>
+                                <p id="list10">•Assembly</p>
+
                             </div>
-                            <a id="readmore2" class="btn btn-default btn-lg">Read More</a>
+
+                            <!--<a id="readmore2" class="btn btn-default btn-lg">Read More</a>-->
                         </div>
                     </div>
                 </div>
@@ -175,25 +195,41 @@
         </section>
         <!--<hr>-->
 
-        <section id = "thirdSection">
-            <div class= "containter">
-                <div class="row">
+        <section id="thirdSection">
+            <div class="container">
+                <div id="thirdSectionRow" class="row">
+                        <h id="thirdSectionTitle">See what I'm up to!</h>
+                </div>
 
-                    <video width="480" height="360" autoplay loop muted>
-                    <source src="/videos/20180828_165205_2.mp4" type="video/mp4">
+                <div id="videosRow" class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="thirdSection-left">
+                            <video autoplay loop muted>
+                            <source src="/videos/20180828_165205_2.mp4" type="video/mp4">
 
-                    </video>
+                            </video>
+                        </div>
+                    </div>
 
-                    <video width="480" height="360" autoplay loop muted>
-                    <source src="/video/20180820_170522_2.mp4" type="video/mp4">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="thirdSection-right">
+                            <video id = "soldering" autoplay loop muted>
+                            <source src="/videos/20180820_170522_2.mp4" type="video/mp4">
 
-                    </video>
+                            </video>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </section>
 
-        <footer class="socialmedia" id="social_media">
+        <section id="footerSection">
+
+        <div class="container">
+
+        <div class="row">
+
             <div id="socialinfo">
 
                 <h2 id="h4">Find Me On:</h2>
@@ -210,10 +246,13 @@
                     </div>
 
                 <p id="p4">rlozano@ucdavis.edu</p>
-                <p id="p5">707-245-6435</p>
+                <p id="p5">Tel: 707-245-6435</p>
 
             </div>
-        </footer>
+            <!--</footer>-->
+            </div>
+            </div>
+        </section>
 
 
       <script
@@ -224,11 +263,21 @@
 
     <script>
         window.sr = ScrollReveal();
-        sr.reveal('.navbar', {
+
+        sr.reveal('.navbarName', {
           duration: 2000,
           origin:'left',
           distance:'50px'
         });
+
+
+        /*sr.reveal('.navbar-collapse .collapse .in a', {
+          duration: 2000,
+          origin:'left',
+          distance:'50px'
+        });
+
+
         sr.reveal('#nav1 #navbar #home', {
           delay: 500,
           duration: 2000,
@@ -236,23 +285,24 @@
           distance:'0px'
         });
         sr.reveal('#nav1 #navbar #about', {
-          delay: 1000,
+          delay: 900,
           duration: 2000,
           origin:'left',
           distance:'0px'
         });
         sr.reveal('#nav1 #navbar #portfolio', {
-          delay: 1500,
+          delay: 1300,
           duration: 2000,
           origin:'left',
           distance:'0px'
         });
         sr.reveal('#nav1 #navbar #resume', {
-          delay: 2000,
+          delay: 1600,
           duration: 2000,
           origin:'left',
           distance:'0px'
-        });
+        });*/
+
         sr.reveal('.clock', {
           delay: 1100,
           duration: 1500,
@@ -283,41 +333,69 @@
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list1', {
-          delay: 400,
+          delay: 300,
           duration: 2000,
           origin:'right',
           distance:'300px',
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list2', {
-          delay: 1100,
+          delay: 700,
           duration: 2000,
           origin:'right',
           distance:'300px',
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list3', {
-          delay: 1800,
+          delay: 1100,
           duration: 2000,
           origin:'right',
           distance:'300px',
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list4', {
-          delay: 2500,
+          delay: 1500,
           duration: 2000,
           origin:'right',
           distance:'300px',
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list5', {
-          delay: 3200,
+          delay: 1900,
           duration: 2000,
           origin:'right',
           distance:'300px',
           viewFactor: 0.2
         });
         sr.reveal('.secondSection-right #list6', {
+          delay: 2300,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
+        sr.reveal('.secondSection-right #list7', {
+          delay: 2700,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
+        sr.reveal('.secondSection-right #list8', {
+          delay: 3100,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
+        sr.reveal('.secondSection-right #list9', {
+          delay: 3500,
+          duration: 2000,
+          origin:'right',
+          distance:'300px',
+          viewFactor: 0.2
+        });
+        sr.reveal('.secondSection-right #list10', {
           delay: 3900,
           duration: 2000,
           origin:'right',
@@ -325,14 +403,14 @@
           viewFactor: 0.2
         });
         sr.reveal('#socialinfo h2, #socialinfo p', {
-          delay: 1000,
+          delay: 700,
           duration: 1000,
           origin:'right',
           distance:'0px',
           viewFactor: 0.2
         });
         sr.reveal('#socialIcons', {
-          delay: 1700,
+          delay: 400,
           duration: 1000,
           origin:'right',
           distance:'0px',
