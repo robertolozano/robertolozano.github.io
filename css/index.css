@@ -1,15 +1,20 @@
-body{ 
-    overflow-x:hidden; 
+body{
+    overflow-x:hidden;
 }
 
 #body1{
     background-color: ghostwhite;
 }
 
-#nav1{
-    background-color: skyblue;
+#nav1 .container{
+    background: skyblue;
     width: 100vw;
     position: absolute;
+    z-index: 9999;
+}
+
+.navbar{
+       margin-bottom: 0!important;
 }
 
 #nav1 a, #nav1 a{
@@ -30,8 +35,7 @@ body{
 
 #txt {
     font-family: 'Anton', sans-serif;
-    margin-top: 15;
-    margin-left: 0vw;
+    margin-top:15;
     display: inline-block;
     text-align: center;
     vertical-align: top;
@@ -47,8 +51,6 @@ body{
 }
 
 #firstSection{
-    margin-top: 51px;
-    height: 40vh;
     background-color: EDF9FE;
 }
 
@@ -61,6 +63,27 @@ body{
     font-family:'Rubik', sans-serif;
 }
 
+#parkPic{
+  border-radius: 50%;
+  width:100%;
+  margin-top: 20;
+  margin-bottom: 20;
+  border: 10px outset skyblue;
+  border-radius: 500px;
+  box-shadow: 0px 0px 5px grey;
+
+}
+
+/*#readmore1{
+    margin-left: 10px;
+}*/
+
+#seal{
+    border: 10px outset skyblue;
+    border-radius: 500px;
+    box-shadow: 0px 0px 5px grey;
+}
+
 .secondSection-right #h2{
     margin-top: 10;
 }
@@ -69,9 +92,13 @@ body{
     font-family:'Rubik', sans-serif;
 }
 
+.secondSection-right .list{
+    margin-bottom: 20;
+}
+
 #secondSection{
     margin-bottom: -5;
-    background-color: EDF9FE;/*f1f1f1;*/
+    background-color: EDF9FE;
     opacity: inherit;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -107,57 +134,54 @@ body{
 
 
 #thirdSection{
-    height: 55vh;
     background-color: EDF9FE;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    align-content: center;
+    text-align: center;
+}
 
+#thirdSectionTitle{
+    font-family: 'Rubik', sans-serif;
+    font-size: 40;
 }
 
 #thirdSection video{
-    margin-top: 10;
-    margin-left: 150
-
+    height: 600;
+    margin-top: 20;
+    margin-bottom: 20;
+    border: 10px outset skyblue;
+    border-radius: 500px;
+    box-shadow: 0px 0px 5px grey;
 }
 
-.socialmedia {
-    height: 35vh;
+#videosRow{
+    display: inline-block;
+}
+
+#footerSection {
+    height: 25vh;
     text-align: center;
     background-color: skyblue;
 }
 
-.socialmedia h2,.socialmedia p{
-    font-size: 50;
+#footerSection{
+    background-color: skyblue;
+}
+
+#footerSection h2{
+    font-size: 30;
     color:aliceblue;
-    margin-top: 0;
-    margin-bottom: -5;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto Slav', sans-serif;
+}
+
+#footerSection p{
+    font-size: 15;
+    color:aliceblue;
+    font-family: 'Roboto Slav', sans-serif;
 }
 
 #facebook,#instagram,#twitter {
     font-size: 50;
     color:aliceblue;
 }
-
-/*
-.navbar{
-    font-family: 'Anton', sans-serif;
-    font-weight: 700;
-    overflow: hidden;
-    background-color: transparent;
-    top: 0; 
-    width: 100%;
-    z-index: 100;
-    font-size: 30px;
-}
-
-/* Links inside the navbar */
-/*
-.navbar a{
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-}*/
