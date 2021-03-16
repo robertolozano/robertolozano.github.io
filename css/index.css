@@ -1,5 +1,6 @@
 *{
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -17,8 +18,15 @@ body{
     flex-direction: row;
     height: 80px;
     align-items: center;
-    /* background-color: green; */
+    /* position: fixed; */
 }
+
+#RLJ_Logo{
+    /* background-color: red; */
+    padding-right: 20px;
+    border-right: 4px rgb(230, 151, 66) solid;
+}
+
 
 #left_nav{
     width: 50%;
@@ -34,13 +42,15 @@ body{
 #linkedin_pic{
     width: 45px;
     height: 45px;
-    padding: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
+    /* background-color: red; */
 }
 
 #github_pic{
     width: 60px;
     height: 60px;
-    padding: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
+    /* background-color: aqua; */
 }
 
 #right_nav{
@@ -143,6 +153,11 @@ body{
     color: rgb(230, 151, 66);
 }
 
+.tech_stack{
+    color: rgb(230, 151, 66);
+    padding: 40px 0px 0px 0px;
+}
+
 .project{
     margin: 60px 0px 0px 0px;
     display: flex;
@@ -187,13 +202,13 @@ body{
     #linkedin_pic{
         width: 35px;
         height: 35px;
-        padding: 0px 0px 0px 20px;
+        margin: 0px 0px 0px 20px;
     }
 
     #github_pic{
         width: 50px;
         height: 50px;
-        padding: 0px 0px 0px 20px;
+        margin: 0px 0px 0px 20px;
     }
 
     #right_nav{
