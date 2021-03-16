@@ -1,6 +1,4 @@
 var me_section_left = document.getElementById("me_section_left");
-var me_section_right = document.getElementById("me_section_right");
-var me_section_right = document.getElementById("me_section_right");
 
 ScrollReveal().reveal(me_section_left,{
     origin: 'left',
@@ -8,11 +6,15 @@ ScrollReveal().reveal(me_section_left,{
     duration: 820
 });
 
+var me_section_right = document.getElementById("me_section_right");
+
 ScrollReveal().reveal(me_section_right,{
     origin: 'right',
     distance: '50%',
     duration: 820
 });
+
+var project = document.getElementsByClassName("project")
 
 ScrollReveal().reveal(project,{
     origin: 'right',
