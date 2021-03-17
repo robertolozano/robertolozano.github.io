@@ -25,8 +25,19 @@ body{
     /* background-color: red; */
     padding-right: 20px;
     border-right: 4px rgb(230, 151, 66) solid;
+    animation-name: example;
+    animation-duration: 1s;
+    position: relative;
+
 }
 
+@keyframes example {
+    0%   {left:0px;}
+    /* 25%  {left:10px;} */
+    50%  {left:10px;}
+    /* 75%  {left:10px;} */
+    100% {left:0px;}
+}
 
 #left_nav{
     width: 50%;
@@ -272,3 +283,91 @@ body{
         /* background-color: lightgreen; */
     }
 }
+
+
+
+
+
+
+.custom-btn {
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+  }
+  
+  /**** BTN No. 3 ****/
+  .btn-3 {
+    padding: 0;
+    border: none;
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    padding: 5px;
+  }
+  /*transition of top right*/
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+  /*  background: #000;*/
+    background: #3583DE;
+    transition: all 0.3s ease;
+  }
+  /*bottom line*/
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+   /*top line*/
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  /*length of right*/
+  .btn-3:hover:before {
+    height: 100%;
+    height: 0%;
+  }
+  /*length of top*/
+  .btn-3:hover:after {
+    width: 100%;
+    width: 0%;
+  }
+  /*transition of bottom left*/
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+  /*  background: #000;*/
+    background: #3583DE;
+    transition: all 0.3s ease;
+  }
+  /*left line*/
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  /*bottom line*/
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  /*length of left*/
+  .btn-3 span:hover:before {
+    /* height: 100%; */
+    height: 0%;
+  }
+  /*length of bottom*/
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+  
+  /**************************/
