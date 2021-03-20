@@ -122,6 +122,7 @@ body{
 
 #parkBenchPic{
     width: 50%;
+    height: auto;
     border: 10px outset #3583DE;
     border-radius: 180px;
     box-shadow: 0px 0px 5px grey;
