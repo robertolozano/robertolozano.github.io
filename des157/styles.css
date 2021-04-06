@@ -26,6 +26,7 @@ header{
     /* background-color: yellow; */
     width: 1100px;
     height: 250px;
+    display: flex;
 }
 
 main{
@@ -53,31 +54,35 @@ main ul{
 
 #square1{
     background-color: red;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 200px;
     position: relative;
-    animation: dance 3s;
     animation-iteration-count: infinite;
 }
 
 @keyframes dance{
-    0% {left: 0px;}
-    50% {left: 200px;}
-    100%{left: 0px;}
+    0% {left: 0px; top: 0px}
+    /* 25% {left: 336px; top: 50px} */
+    /* 50% {left: 672; top: 100px;} */
+    100% {left: 1010px; top: 150px;}
+    /* 100%{left: 0px;} */
 }
 
 #square2{
     background-color: blue;
-    width: 50px;
-    height: 50px;
-    transition: width 2s;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    animation: dance 2s;
+    animation-iteration-count: infinite;
 }
 
 #square3{
     background-color: green;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 200px;
     transition: width 2s;
+    margin-left: auto;
 }
 
 #square2:hover{
