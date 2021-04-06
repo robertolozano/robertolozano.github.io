@@ -53,23 +53,45 @@ main ul{
 }
 
 #square1{
-    background-color: red;
+    background-color: rgb(104, 176, 180);
     width: 20px;
-    height: 200px;
+    height: 100px;
     position: relative;
+    animation: upanddown 1s;
     animation-iteration-count: infinite;
 }
 
-@keyframes dance{
+@keyframes upanddown{
     0% {left: 0px; top: 0px}
     /* 25% {left: 336px; top: 50px} */
     /* 50% {left: 672; top: 100px;} */
-    100% {left: 1010px; top: 150px;}
+    50% {left: 0px; top: 100px;}
+    100% {left: 0px; top: 0px;}
+    /* 100%{left: 0px;} */
+}
+
+@keyframes upanddowntwo{
+    0% {left: 0px; top: 100px}
+    /* 25% {left: 336px; top: 50px} */
+    /* 50% {left: 672; top: 100px;} */
+    50% {left: 0px; top: 0;}
+    100% {left: 0px; top: 100px;}
+    /* 100%{left: 0px;} */
+}
+
+@keyframes dance{
+    0% {left: 0px; top: 50px}
+    /* 25% {left: 336px; top: 50px} */
+    /* 50% {left: 672; top: 100px;} */
+    50% {left: 1020px; top: 70px;}
+    100% {left: 0px; top: 50px;}
+
     /* 100%{left: 0px;} */
 }
 
 #square2{
-    background-color: blue;
+    /* background-color: blue; */
+    background-color: rgb(171, 135, 224);
     width: 40px;
     height: 40px;
     position: relative;
@@ -78,11 +100,13 @@ main ul{
 }
 
 #square3{
-    background-color: green;
-    width: 20px;
-    height: 200px;
-    transition: width 2s;
+    background-color: rgb(104, 176, 180);
     margin-left: auto;
+    width: 20px;
+    height: 100px;
+    position: relative;
+    animation: upanddowntwo 1s;
+    animation-iteration-count: infinite;
 }
 
 #square2:hover{
