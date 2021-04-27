@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs</title>
+    <link rel="stylesheet" href="reset.css"></rel>
+    <link rel="stylesheet" href="styles.css"></rel>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+
+
+        <h1 id="hero">Get<br> Linked!</h1>
+
+        <div id="blob1"></div>
+        <div id="blob2"></div>
+        <div id="blob3"></div>
+        <div id="blob4"></div>
+        <div id="blob5"></div>
+        <div id="blob6"></div>
+
+
+
+        <div id="title">
+            <p>Mad Linked</p>
+        </div>
+
+        <div id="menu">
+            <form>
+            <div id="input_fields">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+
+                    <label for="profession">Profession</label>
+                    <input type="text" id="profession">
+        
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName">
+                </div>
+                <div>
+                    <label for="job">Job/Role</label>
+                    <input type="text" id="job">
+
+                    <label for="noun1">Noun 1</label>
+                    <input type="text" id="noun1">
+
+                    <label for="noun2">Noun 2</label>
+                    <input type="text" id="noun2">
+                </div>
+
+                <div>
+                    <label for="famousPerson">Famous Person</label>
+                    <input type="text" id="famousPerson">
+
+                    <label for="advice">Piece of Advice</label>
+                    <input type="text" id="advice">
+                </div>
+            </div>
+            </form>
+
+            <input type="submit" value="Send" id="submit">
+        </div>
+
+        <div class="hidden" id="result">
+            <img alt="smileyImage" id="smiley" src="./images/smiley.png">
+            <p class="blue" id="name_field">BLANK</p>
+            <p id="aspiring">Aspiring <span class="blue" id="profession_field">BLANK</span></p>
+            <p>Hello everyone! I am excited to announce that I'll be accepting
+                a new position of <span class="blue" id="job_field">BLANK</span> at <span class="blue" id="companyName_field">BLANK</span>. 
+                I'll be in charge of leading the team in developing the latest <span class="blue" id="noun1_field">BLANK</span>. I'd like to thank my
+                <span class="blue" id="noun2_field">BLANK</span> for their support along the way. I'd also like to thank
+                my mentor <span class="blue" id="famousPerson_field">BLANK</span> for telling me that if I <span class="blue" id="advice_field">BLANK</span>, I can accomplish
+                anything. 
+            </p>
+            <button id="close">Reset</button>
+        </div>
+
+    </div>
+    <footer>
+        <nav>
+            <a id="email" href="mailto:rlozano@ucdavis.edu">Email</a>
+            <a id="html" href="https://validator.w3.org/check?uri=https://yourusername.github.io/des157/studio1">Valid HTML 5</a>
+            <a id="css" href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+        </nav>
+    </footer>
+</body>
+</html>
