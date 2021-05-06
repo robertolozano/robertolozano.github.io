@@ -192,6 +192,7 @@ footer nav a{
 
 .image_desc{
     display: flex;
+    padding-bottom: 80px;
 }
 
 .image_desc p{
