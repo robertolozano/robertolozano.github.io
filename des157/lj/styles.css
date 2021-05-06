@@ -168,3 +168,35 @@ footer nav a{
     60% {width: 475px}
     100%{width: 0px;}
 }
+
+#everypicture figure{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+
+#everypicture figure img{
+    width: 100%
+}
+
+#everypicture figure figcaption{
+    display: inline;
+}
+
+#images{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image_desc{
+    display: flex;
+}
+
+.image_desc p{
+    column-count: 2;
+    column-gap: 40px;
+    font-size: 24px;
+    max-width: 800px;
+}
