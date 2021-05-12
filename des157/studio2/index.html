@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Every Picture</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Every Sneaker</h1>
+        <div id="sneaker_section">
+            <img src="images/box_closed.png">
+            <img src="images/box_closed.png">
+            <img src="images/box_closed.png">
+            <img src="images/box_closed.png">
+            <img src="images/box_closed.png">
+        </div>    
+        <div id="overlay" class="overlay_hidden">
+            <button id="exit_overlay">X</button>
+            <div id="container2">
+                <div id="topleft"></div>
+                <div id="bottomright"></div>
+                <div id="center"></div>
+                <img id="sneakerIMG" class="start" src="./images/sneaker0.png">
+            </div>
+            <div id="overlay_shoebox">
+                <div id="overlay_shoebox_lid"></div>
+                <div id="overlay_shoebox_label">
+                    <p>Size 9</p>
+                    <p>UK 10.5</p>
+                    <p id="color">Pacific Blue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
