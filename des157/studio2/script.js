@@ -3,10 +3,10 @@
 
     let currentBox;
     const description = [
-                        "Classic black swoosh designed by Nike",
-                        "Classic blue swoosh designed by Nike, similar in design to the nike blazer that appeared in the film Like Mike",
                         "Classic red swoosh designed by Nike",
+                        "Classic black swoosh designed by Nike",
                         "Classic green swoosh designed by Nike",
+                        "Classic blue swoosh designed by Nike, similar in design to the nike blazer that appeared in the film Like Mike",
                         "Sketch swoosh designed by Nike as part of the sketch pack where the designer attempted a more deconstructed look and spun the design with a more handdrawn design"
                         ]
 
@@ -24,7 +24,6 @@
     const shoeBoxes = document.querySelectorAll('#sneaker_section img')
 
     shoeBoxes.forEach(function(eachBox,i){
-        currentBox = i
         eachBox.addEventListener('mouseover', function(){
             eachBox.src="./images/box_open.png"
         });
@@ -32,6 +31,7 @@
             eachBox.src="./images/box_closed.png"
         });
         eachBox.addEventListener('click', function(){
+            currentBox = i
             document.getElementById("sneakerIMG").src = `./images/sneaker${i}.png`
             document.getElementById("overlay").className = "overlay_shown";
             document.getElementById("sneakerIMG").className = "container2_open_slow start";
@@ -76,7 +76,7 @@
                                 descriptionText.textContent = "Suede toebox"
                                 break;
             case 'center':  theImg.className = 'center'; 
-                            descriptionText.textContent = description[currentBox]
+                            descriptionText.textContent = description[currentBox];
                             break;
         }
     }
