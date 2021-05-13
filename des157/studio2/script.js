@@ -21,7 +21,7 @@
         eachBox.addEventListener('click', function(){
             document.getElementById("sneakerIMG").src = `./images/sneaker${i}.png`
             document.getElementById("overlay").className = "overlay_shown";
-            document.getElementById("sneakerIMG").className = "container2_open_slow";
+            document.getElementById("sneakerIMG").className = "container2_open_slow start";
             document.getElementById("color").textContent = colors[i];
         });
     });
