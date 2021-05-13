@@ -1,5 +1,17 @@
 (function () {
     'use strict';
+
+    let currentBox;
+    const description = [
+                        "Classic black swoosh designed by Nike",
+                        "Classic blue swoosh designed by Nike, similar in design to the nike blazer that appeared in the film Like Mike",
+                        "Classic red swoosh designed by Nike",
+                        "Classic green swoosh designed by Nike",
+                        "Sketch swoosh designed by Nike as part of the sketch pack where the designer attempted a more deconstructed look and spun the design with a more handdrawn design"
+                        ]
+
+    const descriptionText= document.querySelector('#color')
+
     const theImg = document.querySelector('#container2 img');
     const sneakerIMG = document.querySelector('#sneakerIMG');
 
@@ -12,6 +24,7 @@
     const shoeBoxes = document.querySelectorAll('#sneaker_section img')
 
     shoeBoxes.forEach(function(eachBox,i){
+        currentBox = i
         eachBox.addEventListener('mouseover', function(){
             eachBox.src="./images/box_open.png"
         });
@@ -35,7 +48,8 @@
 
     const hotSpots = document.querySelectorAll('#container2 div');
 
-    hotSpots.forEach(function (eachSpot) {
+    hotSpots.forEach(function (eachSpot, i) {
+        console.log(i);
         eachSpot.addEventListener('mouseover', zoomPhoto);
         eachSpot.addEventListener('mouseout', function () {
             theImg.className = 'start';
@@ -55,9 +69,15 @@
         const thisCorner = event.target.id;
         console.log(thisCorner);
         switch (thisCorner) {
-            case 'topleft': theImg.className = 'topleft'; break;
-            case 'bottomright': theImg.className = 'bottomright'; break;
-            case 'center': theImg.className = 'center'; break;
+            case 'topleft': theImg.className = 'topleft'; 
+                            descriptionText.textContent = "Vulcanized Outsole"
+                            break;
+            case 'bottomright': theImg.className = 'bottomright'; 
+                                descriptionText.textContent = "Suede toebox"
+                                break;
+            case 'center':  theImg.className = 'center'; 
+                            descriptionText.textContent = description[currentBox]
+                            break;
         }
     }
 
