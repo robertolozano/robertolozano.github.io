@@ -211,3 +211,32 @@ body{
     left: 50%;
     transform: translate(-50%, -48%);
 }
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 80px 0px 80px 0px;
+    font-size: 20px;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 23px;
+}
+
+#email{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding-right: 10px;
+}
+
+#html{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding: 0px 15px 0px 10px;
+}
+
+#css{
+    padding: 0px 0px 0px 10px;
+}
