@@ -97,6 +97,9 @@ startGameButton.addEventListener("click", function(){
     containerIndex.className = "invisible";
     container.className = "visible";
     backgroundMusic.volume = BACKGROUNDVOLUME;
+    heal_up.volume = "1"
+    fire_attack.volume = "1"
+    electric_attack.volume = "1"
     backgroundMusic.loop = true;
     backgroundMusic.play();
 });
@@ -231,7 +234,7 @@ function throwDice(){
 
         }
         health.className="appearing";
-        heal_up.volume = "1"
+        // heal_up.volume = "1"
         heal_up.play();
         setTimeout(function(){
             health.className="attack_hidden";
@@ -250,7 +253,7 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon1.name}'s attack hit! ${gameData.pokemon2.name} took some damage. It is still ${gameData.pokemon1.name}'s turn`;
             adjustHealth(POKEMON2, 20);
             flame.className = "bottom_to_top"
-            fire_attack.volume = "1";
+            // fire_attack.volume = "1";
             fire_attack.play();
             setTimeout(function(){
                 flame.className = "attack_hidden"
@@ -260,7 +263,7 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon2.name}'s attack hit! ${gameData.pokemon1.name} took some damage. It is still ${gameData.pokemon2.name}'s turn`;
             adjustHealth(POKEMON1, 20);
             lightning.className = "bottom_to_top"
-            electric_attack.volume = "1"
+            // electric_attack.volume = "1"
             electric_attack.play();
             setTimeout(function(){
                 lightning.className = "attack_hidden"
