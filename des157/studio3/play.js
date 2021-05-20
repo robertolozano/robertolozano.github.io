@@ -1,9 +1,3 @@
-// var startGame = document.getElementById('startgame');
-// var gameControl = document.getElementById('gamecontrol');
-// var game = document.getElementById('game');
-// var score = document.getElementById('score');
-// var actionArea = document.getElementById('actions');
-
 var POKEMON1 = 0;
 var POKEMON2 = 1;
 
@@ -49,80 +43,6 @@ var gameData = {
     }
 };
 
-// startGame.addEventListener("click", function(){
-//     gameData.index = Math.round(Math.random());
-//     gameControl.innerHTML = '<h2>The game has started</h2>';
-//     gameControl.innerHTML += '<button id="quit">Wanna quit</button>';
-
-//     document.getElementById('quit').addEventListener("click", function(){
-//         location.reload();
-//     });
-
-//     console.log(gameData.index);
-//     setUpTurn();
-// });
-
-// function setUpTurn(){
-//     game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
-//     actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
-//     document.getElementById('roll').addEventListener('click', function(){
-//         throwDice();
-//     });
-// }
-
-// function throwDice(){
-//     actionArea.innerHTML = '';
-//     gameData.roll1 = Math.floor(Math.random() * 6) + 1;
-//     gameData.roll2 = Math.floor(Math.random() * 6) + 1;
-//     game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
-//     game.innerHTML += `<img src="./images/${gameData.dice[gameData.roll1-1]}"><img src="./images/${gameData.dice[gameData.roll2-1]}">`;
-//     gameData.rollSum = gameData.roll1 + gameData.roll2;
-
-//     if(gameData.rollSum === 2){
-//         game.innerHTML += '<p>Oh snap! Snake eyes!</p>';
-//         gameData.score[gameData.index] = 0;
-//         gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-//         showCurrentScore();
-//         setTimeout(setUpTurn, 2000);
-//     }
-//     else if(gameData.roll1 === 1 || gameData.roll2 === 1){
-//         gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-//         game.innerHTML += `<p>Sorry one of your rolls was a one, switching it to ${gameData.players[gameData.index]}</p>`;
-//         setTimeout(setUpTurn, 2000);
-//     }
-//     else{
-//         gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
-//         actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button';
-//         document.getElementById('rollagain').addEventListener('click', function(){
-//             throwDice();
-//         });
-//         document.getElementById('pass').addEventListener('click', function(){
-//             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-//             setUpTurn();
-//         });
-//         checkWinningCondition();
-//     }
-// }
-
-// function checkWinningCondition(){
-//     if(gameData.score[gameData.index] > gameData.gameEnd){
-//         score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
-
-//         actionArea.innerHTML = '';
-//         document.getElementById('quit').innerHTML = "Start a new game?";
-//     }
-//     else{
-//         showCurrentScore();
-//     }
-// }
-
-// function showCurrentScore(){
-//     score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]} ${gameData.score[0]}</strong>
-//         and <strong>${gameData.players[1]} ${gameData.score[1]}</strong></p>`;
-// }
-
-
-
 var useTurn = document.getElementById("use_turn");
 var passTurn = document.getElementById("pass_turn");
 
@@ -141,6 +61,9 @@ var game_description = document.getElementById("game_description");
 
 var lightning = document.getElementById("lightning");
 var flame = document.getElementById("flame");
+
+var pokemon_1_health_text = document.getElementById("pokemon_1_health_text");
+var pokemon_2_health_text = document.getElementById("pokemon_2_health_text");
 
 game_description.textContent = ``;
 
@@ -165,13 +88,16 @@ function adjustHealth(pokemonID, damage){
         newWidth = 93 * percentage;
         if(gameData.gameTurn == 0){
             pokemon1Health.style.width =`${newWidth}%`;
+            pokemon_1_health_text.textContent = gameData.pokemon1.health + "/100";
         }
         else{
             pokemon2Health.style.width =`${newWidth}%`;
+            pokemon_2_health_text.textContent = gameData.pokemon1.health + "/100";
         }
     }
     else{
         gameData.pokemon2.health = gameData.pokemon2.health - damage;
+
         if(gameData.pokemon2.health > 100){
             gameData.pokemon2.health = 100;
         }
@@ -182,27 +108,34 @@ function adjustHealth(pokemonID, damage){
         newWidth = 93 * percentage;
         if(gameData.gameTurn == 0){
             pokemon2Health.style.width =`${newWidth}%`;
+            pokemon_2_health_text.textContent = gameData.pokemon2.health + "/100";
         }
         else{
             pokemon1Health.style.width =`${newWidth}%`;
+            pokemon_1_health_text.textContent = gameData.pokemon2.health + "/100";
         }
     }
 }
-
-// adjustHealth(0, 30);
-// adjustHealth(1, 80);
 
 function changeTurn(){
     clearDice();
     if(gameData.gameTurn == 0){
         pokemon1Name.textContent = gameData.pokemon2.name;
         pokemon2Name.textContent = gameData.pokemon1.name;
+
+        pokemon_1_health_text.textContent = gameData.pokemon2.health + "/100";
+        pokemon_2_health_text.textContent = gameData.pokemon1.health + "/100";
+
         pokemon1Art.src = "images/pikachu2.png";
         pokemon2Art.src = "images/charmander2.png";
     }
     else{
         pokemon1Name.textContent = gameData.pokemon1.name;
         pokemon2Name.textContent = gameData.pokemon2.name;
+
+        pokemon_1_health_text.textContent = gameData.pokemon1.health + "/100";
+        pokemon_2_health_text.textContent = gameData.pokemon2.health + "/100";
+
         pokemon1Art.src = "images/charmander.png";
         pokemon2Art.src = "images/pikachu.png";
     }
@@ -213,6 +146,10 @@ function changeTurn(){
 
 
 function throwDice(){
+    var backgroundMusic = document.getElementById("background_music");
+    backgroundMusic.volume = "0.25"
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
     gameData.roll = Math.floor(Math.random() * 6) + 1;
     diceRoll.src = "./images/" + gameData.greendice[gameData.roll-1];
     if(gameData.rolledDice.includes(gameData.roll)){
@@ -228,6 +165,9 @@ function throwDice(){
 
         }
         health.className="appearing";
+        var heal_up = document.getElementById("heal_up");
+        heal_up.volume = "1"
+        heal_up.play();
         setTimeout(function(){
             health.className="attack_hidden";
             changeTurn();
@@ -245,6 +185,9 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon1.name}'s attack hit! ${gameData.pokemon2.name} took some damage. It is still ${gameData.pokemon1.name}'s turn`;
             adjustHealth(POKEMON2, 20);
             flame.className = "bottom_to_top"
+            var fire_attack = document.getElementById("fire_attack");
+            fire_attack.volume = "1";
+            fire_attack.play();
             setTimeout(function(){
                 flame.className = "attack_hidden"
             }, 1000);
@@ -253,6 +196,9 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon2.name}'s attack hit! ${gameData.pokemon1.name} took some damage. It is still ${gameData.pokemon2.name}'s turn`;
             adjustHealth(POKEMON1, 20);
             lightning.className = "bottom_to_top"
+            var electric_attack = document.getElementById("electric_attack");
+            electric_attack.volume = "1"
+            electric_attack.play();
             setTimeout(function(){
                 lightning.className = "attack_hidden"
             }, 1000);

@@ -47,11 +47,23 @@ body{
     font-size: 40px;
 }
 
+.name_and_health{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 #pokemon_2_name{
     padding: 10px 0px 0px 15px;
     font-size: 40px;
 }
 
+.health_text{
+    display: flex;
+    font-size: 40px;
+    padding: 10px 0px 0px 15px;
+    margin-right: 20px;
+}
 
 .pokemon_health{
     width: 93%;
