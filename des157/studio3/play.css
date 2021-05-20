@@ -8,6 +8,15 @@ body{
 #container{
     width: 1366px;
     height: 768px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container_index{
+    max-width: 1366px;
+    max-height: 768px;
+
+    position: absolute;
 }
 
 #top_pokemon{
@@ -181,7 +190,7 @@ body{
 #menu{
     /* background-color: rgb(192, 135, 135); */
     width: 100%;
-    height: 34%;
+    height: 30%;
     display: flex;
     flex-direction: row;
     border: 9px solid black;
@@ -257,13 +266,11 @@ body{
     flex-direction: column;
     align-items: center;
     font-size: 50px;
-    align-content: space-around;
+    justify-content: space-around;
     border-radius: 0px 40px 40px 0px;
 }
 
 #game_options button {
-    margin-top: 55px;
-    margin-bottom: 5px;
     background:none;
     border: none;
     font-size: 40px;
@@ -334,4 +341,202 @@ body{
         transform: translateX(0px) translateY(0px) rotate(180deg);
         visibility: hidden;
     }
+}
+
+#game_menu_overlay{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border: 14px solid black;
+    z-index: 2;
+    top: 10%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.game_menu_overlay_visible{
+    visibility: showing;
+}
+
+.game_menu_overlay_invisible{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: showing;
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+#game_menu_overlay button{
+    font-size: 50px;
+    background: #60a5d3;
+    border-radius: 30px;
+    border: 5px solid black;
+    padding: 20px;
+}
+
+#game_menu_overlay button:hover{
+    background: #bcf5fc;
+}
+
+#winner_overlay{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    border: 10px solid black;
+    z-index: 2;
+    top: 5%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+}
+
+#winner_overlay img{
+    height: 60%;
+    width: 80%;
+    align-self: center;
+}
+
+#winner_overlay p{
+    justify-self: center;
+    align-self: center;
+    font-size: 40px;
+}
+
+#winner_overlay button{
+    padding: 20px;
+    font-size: 40px;
+    width: 80%;
+    align-self: center;
+    background: none;
+    border: 5px solid black;
+    border-radius: 40px;
+    margin: 30px 0px 0px 0px;
+}
+
+#winner_overlay button:hover{
+    padding: 20px;
+    font-size: 40px;
+    width: 80%;
+    align-self: center;
+    background: #bcf5fc;
+    border: 5px solid black;
+    border-radius: 40px;
+    margin: 30px 0px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body{
+    background-color: #D7E3ED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+/* #container_index{
+    width: 1366px;
+    position: absolute;
+    visibility: ;
+} */
+
+#title_index{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#title_index img{
+    max-height: 100%;
+}
+
+#lower_half_index{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#game_rules_index{
+    width: 50%;
+    font-size: 30px;
+}
+
+#menu_index{
+    width: 50%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu_box_index{
+    width: 90%;
+    /* height: 50%; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 7px solid black;
+    border-radius: 12px;
+}
+
+#menu_box_index p{
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+#menu_index button{
+    width: 20%;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 30px 50px 30px 15px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#menu_box_index input{
+    width: 40%;
+    margin-left: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 4px solid black;
 }

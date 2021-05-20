@@ -10,19 +10,69 @@
 	<link href="play.css" rel="stylesheet">
 </head>
 <body>
-    <audio id="background_music">
-        <source src="./sounds/background2.mp3" type="audio/mp3">
-    </audio>
-    <audio id="fire_attack">
-        <source src="./sounds/fireattack.wav" type="audio/wav">
-    </audio>
-    <audio id="electric_attack">
-        <source src="./sounds/electric_attack.wav" type="audio/wav">
-    </audio>
-    <audio id="heal_up">
-        <source src="./sounds/172589__qubodup__health-potion-166188-drminky-potion-drink-regen.flac" type="audio/flac">
-    </audio>
-    <div id="container">
+    <div id="container_index" class="visible">
+        <div id="title_index">
+            <img src="./images/gameOfPokemon.png">
+        </div>
+        <div id="lower_half_index">
+            <div id="game_rules_index">
+                <h2>Game Rules:</h2>
+                <h3>
+                    <br>
+                    Each player will play as a pokemon.
+                    At each round you will have 2 options:<br><br>
+                    1. Use Turn<br>
+                    -If you hit, then the opponent will lose health.<br>
+                    -If you miss, then it becomes the opponent’s   
+                    turn<br>
+                    -If your Pokemon becomes distracted, the   
+                    opponent has time to heal, and it becomes 
+                    their turn.<br><br>
+                    2. Quit Game<br>
+                    -You will go back to menu screen and game 
+                    will end.<br><br>
+                    First to deplete opponent’s health wins!
+                </h3>
+            </div>
+
+            <div id="menu_index">
+                <div id="menu_box_index">
+                    <p>Player 1</p>
+                    <input>
+                    <p>Player 2</p>
+                    <input>
+                </div>
+                <button id="start_game_button">START!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="container" class="invisible">
+
+        <audio id="background_music">
+            <source src="./sounds/background2.mp3" type="audio/mp3">
+        </audio>
+        <audio id="fire_attack">
+            <source src="./sounds/fireattack.wav" type="audio/wav">
+        </audio>
+        <audio id="electric_attack">
+            <source src="./sounds/electric_attack.wav" type="audio/wav">
+        </audio>
+        <audio id="heal_up">
+            <source src="./sounds/172589__qubodup__health-potion-166188-drminky-potion-drink-regen.flac" type="audio/flac">
+        </audio>
+        <div id="game_menu_overlay" class="game_menu_overlay_invisible">
+            <button id="toggleVolume">Mute/Unmute</button>
+            <button id="quit_game">Quit Game</button>
+            <button id="close_menu_button">Close Menu</button>
+        </div>
+        <div id="winner_overlay" class="game_menu_overlay_invisible">
+            <img id="winner_overlay_img" src="images/charmander.png">
+            <p id="winner_overlay_name" >Charmander won!</p>
+            <button id="winner_overlay_reset" >Back to Start!</button>
+        </div>
+
+
         <div id="top_pokemon">
             <div id="top_left_side">
                 <div class="pokemon_info">
@@ -84,6 +134,7 @@
             <div id="game_options">
                 <button id="use_turn">Roll Again</button>
                 <button id="pass_turn">Pass Turn</button>
+                <button id="game_menu_button">Game Menu</button>
             </div>
         </div>
         <img id="lightning" class="attack_hidden" src="images/lightning2.png">
