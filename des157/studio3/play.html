@@ -12,7 +12,7 @@
 <body>
     <div id="container_index" class="visible">
         <div id="title_index">
-            <img src="./images/gameOfPokemon.png">
+            <img alt="Game Of Pokemon Title" src="./images/gameOfPokemon.png">
         </div>
         <div id="lower_half_index">
             <div id="game_rules_index">
@@ -67,14 +67,14 @@
             <button id="close_menu_button">Close Menu</button>
         </div>
         <div id="winner_overlay" class="game_menu_overlay_invisible">
-            <img id="winner_overlay_img" src="images/charmander.png">
+            <img alt="charmander" id="winner_overlay_img" src="images/charmander.png">
             <p id="winner_overlay_name" >Charmander won!</p>
             <button id="winner_overlay_reset" >Back to Start!</button>
         </div>
 
 
         <div id="top_pokemon">
-            <div id="top_left_side">
+            <div class="top_left_side">
                 <div class="pokemon_info">
                     <div class="name_and_health">
                         <p id="pokemon_2_name">Pikachu</p>
@@ -86,18 +86,18 @@
                     </div>
                 </div>
             </div>
-            <div id="pokemon_display">
-                <img id="pokemon_2_art" class="hopping_top" src="images/pikachu.png">
-                <img id="pokemon_ground" src="./images/Ellipse.png">
+            <div class="pokemon_display">
+                <img alt="pikachu" id="pokemon_2_art" class="hopping_top" src="images/pikachu.png">
+                <img alt="ellipse" class="pokemon_ground" src="./images/Ellipse.png">
             </div>
         </div>
 
         <div id="bottom_pokemon">
-            <div id="pokemon_display">
-                <img id="pokemon_1_art"  class="hopping_bottom" src="images/charmander.png">
-                <img id="pokemon_ground" src="./images/Ellipse.png">
+            <div class="pokemon_display">
+                <img alt="charmander" id="pokemon_1_art"  class="hopping_bottom" src="images/charmander.png">
+                <img alt="ellipse" class="pokemon_ground" src="./images/Ellipse.png">
             </div>
-            <div id="top_left_side">
+            <div class="top_left_side">
                 <div class="pokemon_info">
                     <div class="name_and_health">
                         <p id="pokemon_1_name" class="pokemon_name">Charmander</p>
@@ -115,16 +115,16 @@
             <div id="game_text">
                 <div id="dice_area">
                     <div id="dice_images">
-                        <img id="dice_1_img" src="images/dice1blue.png">
-                        <img id="dice_2_img" src="images/dice2blue.png">
-                        <img id="dice_3_img" src="images/dice3blue.png">
-                        <img id="dice_4_img" src="images/dice4blue.png">
-                        <img id="dice_5_img" src="images/dice5blue.png">
-                        <img id="dice_6_img" src="images/dice6blue.png">
+                        <img alt="dice1blue" id="dice_1_img" src="images/dice1blue.png">
+                        <img alt="dice2blue" id="dice_2_img" src="images/dice2blue.png">
+                        <img alt="dice3blue" id="dice_3_img" src="images/dice3blue.png">
+                        <img alt="dice4blue" id="dice_4_img" src="images/dice4blue.png">
+                        <img alt="dice5blue" id="dice_5_img" src="images/dice5blue.png">
+                        <img alt="dice6blue" id="dice_6_img" src="images/dice6blue.png">
                     </div>
                   
                     <div id="dice_roll">
-                        <img id="dice_roll_img" src="images/dice1green.png">
+                        <img alt="dice1green" id="dice_roll_img" src="images/dice1green.png">
                     </div>
                 </div>
                 <div id="game_description_container">
@@ -137,10 +137,19 @@
                 <button id="game_menu_button">Game Menu</button>
             </div>
         </div>
-        <img id="lightning" class="attack_hidden" src="images/lightning2.png">
-        <img id="flame" class="attack_hidden" src="images/flame.png">
-        <img id="health" class="attack_hidden" src="images/health.png">
+        <img alt="lightning" id="lightning" class="attack_hidden" src="images/lightning2.png">
+        <img alt="flame" id="flame" class="attack_hidden" src="images/flame.png">
+        <img alt="health" id="health" class="attack_hidden" src="images/health.png">
     </div>
+
+    <footer id="footer">
+        <nav>
+            <a id="email" href="mailto:rlozano@ucdavis.edu">Email</a>
+            <a id="html" href="https://validator.w3.org/check?uri=https://robertolozano.github.io/des157/studio2">Valid HTML 5</a>
+            <a id="css" href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+        </nav>
+    </footer>
+
     <script src="play.js"></script>
 </body>
 </html>

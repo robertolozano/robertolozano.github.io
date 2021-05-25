@@ -20,7 +20,6 @@ body{
 }
 
 #top_pokemon{
-    /* background-color: antiquewhite; */
     width: 100%;
     height: 33%;
     display: flex;
@@ -28,14 +27,13 @@ body{
 }
 
 #bottom_pokemon{
-    /* background-color: royalblue; */
     width: 100%;
     height: 33%;
     display: flex;
     flex-direction: row;
 }
 
-#top_left_side{
+.top_left_side{
     width: 50%;
     height: 100%;
 }
@@ -86,7 +84,6 @@ body{
 #pokemon_1_health{
     position: absolute;
     width: 93%;
-    /* width: 80%; */
     height: 30px;
     background-color: #89CF82;
     border-radius: 20px;
@@ -101,7 +98,6 @@ body{
 #pokemon_2_health{
     position: absolute;
     width: 93%;
-    /* width: 80%; */
     height: 30px;
     background-color: #89CF82;
     border-radius: 20px;
@@ -113,8 +109,7 @@ body{
     animation-timing-function: ease;
 }
 
-#pokemon_display{
-    /* background-color: red; */
+.pokemon_display{
     width: 50%;
     height: 100%;
     position: relative;
@@ -127,10 +122,8 @@ body{
     top: 0%;
     z-index: 1;
     position: absolute;
-    /* animation: fade 2s; */
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    /* animation-timing-function: ease; */
 }
 
 .hopping_top {
@@ -173,13 +166,12 @@ body{
     top: 0%;
     z-index: 1;
     position: absolute;
-    /* animation: fade 2s; */
     animation-delay: 0.75s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 
-#pokemon_ground{
+.pokemon_ground{
     position: absolute;
     height: 100px;
     top: 75%;
@@ -188,7 +180,6 @@ body{
 }
 
 #menu{
-    /* background-color: rgb(192, 135, 135); */
     width: 100%;
     height: 30%;
     display: flex;
@@ -202,11 +193,8 @@ body{
     background-color: white;
     height: 100%;
     font-size: 40px;
-    font-size: auto;
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
     border-radius: 38px 0px 0px 38px;
     border-right: 6px solid black;
 }
@@ -234,9 +222,7 @@ body{
 
 #dice_roll{
     display: flex;
-    /* flex-direction: row; */
     width: 20%;
-    /* background-color: #89CF82; */
     justify-content: center;
     align-items: center;
     border-left: 6px solid black;
@@ -282,8 +268,6 @@ body{
     left: 59%;
     width: 100px;
     animation-duration: 1s;
-
-    /* animation: top_to_bottom_lightning 1s; */
 }
 
 #flame{
@@ -304,13 +288,13 @@ body{
 }
 
 .top_to_bottom {
-    visibility: showing;
+    visibility: visible;
     animation-name: top_to_bottom;
     animation-timing-function: ease;
 }
 
 .bottom_to_top {
-    visibility: showing;
+    visibility: visible;
     animation-name: bottom_to_top;
     animation-timing-function: ease;
 }
@@ -320,7 +304,7 @@ body{
 }
 
 .appearing{
-    visibility: showing;
+    visibility: visible;
     animation-name: appearing;
     animation-timing-function: ease;
 }
@@ -359,7 +343,7 @@ body{
 }
 
 .game_menu_overlay_visible{
-    visibility: showing;
+    visibility: visible;
 }
 
 .game_menu_overlay_invisible{
@@ -367,7 +351,7 @@ body{
 }
 
 .visible{
-    visibility: showing;
+    visibility: visible;
 }
 
 .invisible{
@@ -438,44 +422,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body{
-    background-color: #D7E3ED;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-/* #container_index{
-    width: 1366px;
-    position: absolute;
-    visibility: ;
-} */
-
 #title_index{
     width: 100%;
     height: 200px;
@@ -495,7 +441,7 @@ body{
 
 #game_rules_index{
     width: 50%;
-    font-size: 30px;
+    font-size: 29px;
 }
 
 #menu_index{
@@ -539,4 +485,38 @@ body{
     margin-bottom: 30px;
     border-radius: 10px;
     border: 4px solid black;
+}
+
+
+
+
+footer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 30px 0px;
+    font-size: 20px;
+    /* background-color: red; */
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+}
+
+#email{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding-right: 10px;
+}
+
+#html{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding: 0px 15px 0px 10px;
+}
+
+#css{
+    padding: 0px 0px 0px 10px;
 }

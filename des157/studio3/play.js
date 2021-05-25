@@ -1,9 +1,9 @@
-var POKEMON1 = 0;
-var POKEMON2 = 1;
-var BACKGROUNDVOLUME = 0.15;
-var HEALTHREGAIN = -30;
+let POKEMON1 = 0;
+let POKEMON2 = 1;
+let BACKGROUNDVOLUME = 0.09;
+let HEALTHREGAIN = -30;
 
-var gameData = {
+let gameData = {
     greendice: [
         'dice1green.png',
         'dice2green.png',
@@ -45,55 +45,59 @@ var gameData = {
     }
 };
 
-var useTurn = document.getElementById("use_turn");
-var passTurn = document.getElementById("pass_turn");
+let useTurn = document.getElementById("use_turn");
+let passTurn = document.getElementById("pass_turn");
 
-var pokemon1Health = document.getElementById("pokemon_1_health");
-var pokemon2Health = document.getElementById("pokemon_2_health");
+let pokemon1Health = document.getElementById("pokemon_1_health");
+let pokemon2Health = document.getElementById("pokemon_2_health");
 
-var pokemon1Name = document.getElementById("pokemon_1_name");
-var pokemon2Name = document.getElementById("pokemon_2_name");
+let pokemon1Name = document.getElementById("pokemon_1_name");
+let pokemon2Name = document.getElementById("pokemon_2_name");
 
-var pokemon1Art = document.getElementById("pokemon_1_art");
-var pokemon2Art = document.getElementById("pokemon_2_art");
+let pokemon1Art = document.getElementById("pokemon_1_art");
+let pokemon2Art = document.getElementById("pokemon_2_art");
 
-var diceRoll = document.getElementById("dice_roll_img");
+let diceRoll = document.getElementById("dice_roll_img");
 
-var game_description = document.getElementById("game_description");
+let game_description = document.getElementById("game_description");
 
-var lightning = document.getElementById("lightning");
-var flame = document.getElementById("flame");
+let lightning = document.getElementById("lightning");
+let flame = document.getElementById("flame");
 
-var pokemon_1_health_text = document.getElementById("pokemon_1_health_text");
-var pokemon_2_health_text = document.getElementById("pokemon_2_health_text");
+let pokemon_1_health_text = document.getElementById("pokemon_1_health_text");
+let pokemon_2_health_text = document.getElementById("pokemon_2_health_text");
 
-var gameMenu= document.getElementById("game_menu_button");
-var gameMenuOverlay = document.getElementById("game_menu_overlay");
+let gameMenu= document.getElementById("game_menu_button");
+let gameMenuOverlay = document.getElementById("game_menu_overlay");
 
-var closeMenuButton = document.getElementById("close_menu_button");
+let closeMenuButton = document.getElementById("close_menu_button");
 
-var toggleVolume = document.getElementById("toggleVolume");
+let toggleVolume = document.getElementById("toggleVolume");
 
-var backgroundMusic = document.getElementById("background_music");
-var heal_up = document.getElementById("heal_up");
-var fire_attack = document.getElementById("fire_attack");
-var electric_attack = document.getElementById("electric_attack");
+let backgroundMusic = document.getElementById("background_music");
+let heal_up = document.getElementById("heal_up");
+let fire_attack = document.getElementById("fire_attack");
+let electric_attack = document.getElementById("electric_attack");
 
-var winnerOverlay = document.getElementById("winner_overlay");
-var winnerImg = document.getElementById("winner_overlay_img");
-var winnerName = document.getElementById("winner_overlay_name");
-var winnerOverlayReset = document.getElementById("winner_overlay_reset");
+let winnerOverlay = document.getElementById("winner_overlay");
+let winnerImg = document.getElementById("winner_overlay_img");
+let winnerName = document.getElementById("winner_overlay_name");
+let winnerOverlayReset = document.getElementById("winner_overlay_reset");
 
-var startGameButton = document.getElementById("start_game_button");
-var containerIndex = document.getElementById("container_index");
-var container = document.getElementById("container");
-var quitGame = document.getElementById("quit_game");
+let startGameButton = document.getElementById("start_game_button");
+let containerIndex = document.getElementById("container_index");
+let container = document.getElementById("container");
+let quitGame = document.getElementById("quit_game");
+
+let footer = document.getElementById("footer");
 
 quitGame.addEventListener("click", function(){
     location.reload();
 });
 
 startGameButton.addEventListener("click", function(){
+    footer.className = "invisible"
+    containerIndex.className = "invisible";
     containerIndex.className = "invisible";
     container.className = "visible";
     backgroundMusic.volume = BACKGROUNDVOLUME;
@@ -144,9 +148,6 @@ useTurn.addEventListener('click', function(){
 passTurn.addEventListener('click', function(){
     changeTurn();
 });
-
-// adjustHealth(POKEMON1, 80);
-// adjustHealth(POKEMON2, 80);
 
 function adjustHealth(pokemonID, damage){
     if(pokemonID == POKEMON1){
@@ -234,7 +235,6 @@ function throwDice(){
 
         }
         health.className="appearing";
-        // heal_up.volume = "1"
         heal_up.play();
         setTimeout(function(){
             health.className="attack_hidden";
@@ -253,7 +253,6 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon1.name}'s attack hit! ${gameData.pokemon2.name} took some damage. It is still ${gameData.pokemon1.name}'s turn`;
             adjustHealth(POKEMON2, 20);
             flame.className = "bottom_to_top"
-            // fire_attack.volume = "1";
             fire_attack.play();
             setTimeout(function(){
                 flame.className = "attack_hidden"
@@ -263,7 +262,6 @@ function throwDice(){
             game_description.textContent = `${gameData.pokemon2.name}'s attack hit! ${gameData.pokemon1.name} took some damage. It is still ${gameData.pokemon2.name}'s turn`;
             adjustHealth(POKEMON1, 20);
             lightning.className = "bottom_to_top"
-            // electric_attack.volume = "1"
             electric_attack.play();
             setTimeout(function(){
                 lightning.className = "attack_hidden"
@@ -303,8 +301,5 @@ function clearDice(){
 }
 
 function resetGame(){
-    // clearDice();
-    // adjustHealth(POKEMON1, -100);
-    // adjustHealth(POKEMON2, -100);
     location.reload();
 }
