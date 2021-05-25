@@ -518,5 +518,10 @@ footer nav a{
 }
 
 #css{
+    padding: 0px 15px 0px 10px;
+    border-right: 3px solid rgb(219, 161, 36);
+}
+
+#sources{
     padding: 0px 0px 0px 10px;
 }
