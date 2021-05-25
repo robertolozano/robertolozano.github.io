@@ -1,6 +1,6 @@
 let POKEMON1 = 0;
 let POKEMON2 = 1;
-let BACKGROUNDVOLUME = 0.09;
+let BACKGROUNDVOLUME = 0.05;
 let HEALTHREGAIN = -30;
 
 let gameData = {
