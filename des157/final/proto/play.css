@@ -563,3 +563,8 @@ footer nav a{
     top: 300px;
     left: 650px;
 }
+
+#instructions{
+    font-size: 30px;
+    padding-top: 20px;
+}

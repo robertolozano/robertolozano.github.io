@@ -145,7 +145,7 @@ gameMenu.addEventListener("click", function(){
 game_description.textContent = ``;
 
 useTurn.addEventListener('click', function(){
-    // throwDice();
+    throwDice();
 });
 
 passTurn.addEventListener('click', function(){
@@ -194,85 +194,85 @@ function adjustHealth(pokemonID, damage){
     }
 }
 
-// function changeTurn(){
-//     // clearDice();
-//     if(gameData.gameTurn == POKEMON1){
-//         pokemon1Name.textContent = gameData.pokemon2.name;
-//         pokemon2Name.textContent = gameData.pokemon1.name;
+function changeTurn(){
+    clearDice();
+    if(gameData.gameTurn == POKEMON1){
+        pokemon1Name.textContent = gameData.pokemon2.name;
+        pokemon2Name.textContent = gameData.pokemon1.name;
 
-//         pokemon_1_health_text.textContent = gameData.pokemon2.health + "/100";
-//         pokemon_2_health_text.textContent = gameData.pokemon1.health + "/100";
+        pokemon_1_health_text.textContent = gameData.pokemon2.health + "/100";
+        pokemon_2_health_text.textContent = gameData.pokemon1.health + "/100";
 
-//         pokemon1Art.src = gameData.pokemon2.pokemon_art;
-//         pokemon2Art.src = gameData.pokemon1.pokemon_art_reversed;
-//     }
-//     else{
-//         pokemon1Name.textContent = gameData.pokemon1.name;
-//         pokemon2Name.textContent = gameData.pokemon2.name;
+        pokemon1Art.src = gameData.pokemon2.pokemon_art;
+        pokemon2Art.src = gameData.pokemon1.pokemon_art_reversed;
+    }
+    else{
+        pokemon1Name.textContent = gameData.pokemon1.name;
+        pokemon2Name.textContent = gameData.pokemon2.name;
 
-//         pokemon_1_health_text.textContent = gameData.pokemon1.health + "/100";
-//         pokemon_2_health_text.textContent = gameData.pokemon2.health + "/100";
+        pokemon_1_health_text.textContent = gameData.pokemon1.health + "/100";
+        pokemon_2_health_text.textContent = gameData.pokemon2.health + "/100";
 
-//         pokemon1Art.src = gameData.pokemon1.pokemon_art;
-//         pokemon2Art.src = gameData.pokemon2.pokemon_art;
-//     }
-//     gameData.gameTurn ? (gameData.gameTurn = POKEMON1) : (gameData.gameTurn = POKEMON2);
-//     adjustHealth(POKEMON1, 0);
-//     adjustHealth(POKEMON2, 0);
-// }
+        pokemon1Art.src = gameData.pokemon1.pokemon_art;
+        pokemon2Art.src = gameData.pokemon2.pokemon_art;
+    }
+    gameData.gameTurn ? (gameData.gameTurn = POKEMON1) : (gameData.gameTurn = POKEMON2);
+    adjustHealth(POKEMON1, 0);
+    adjustHealth(POKEMON2, 0);
+}
 
 
-// function throwDice(){
-//     gameData.roll = Math.floor(Math.random() * 6) + 1;
-//     diceRoll.src = "./images/" + gameData.greendice[gameData.roll-1];
-//     if(gameData.rolledDice.includes(gameData.roll)){
-//         //switch turns and heal opponent
-//         clearDice();
-//         if(gameData.gameTurn == POKEMON1){
-//             game_description.textContent = `${gameData.pokemon1.name} attack missed! ${gameData.pokemon2.name} had time to heal. It is now ${gameData.pokemon2.name}'s turn`;
-//             adjustHealth(POKEMON2, HEALTHREGAIN);
-//         }
-//         else{
-//             game_description.textContent = `${gameData.pokemon2.name} attack missed! ${gameData.pokemon1.name} had time to heal. It is now ${gameData.pokemon1.name}'s turn`;
-//             adjustHealth(POKEMON1, HEALTHREGAIN);
+function throwDice(){
+    gameData.roll = Math.floor(Math.random() * 6) + 1;
+    diceRoll.src = "./images/" + gameData.greendice[gameData.roll-1];
+    if(gameData.rolledDice.includes(gameData.roll)){
+        //switch turns and heal opponent
+        clearDice();
+        if(gameData.gameTurn == POKEMON1){
+            game_description.textContent = `${gameData.pokemon1.name} attack missed! ${gameData.pokemon2.name} had time to heal. It is now ${gameData.pokemon2.name}'s turn`;
+            adjustHealth(POKEMON2, HEALTHREGAIN);
+        }
+        else{
+            game_description.textContent = `${gameData.pokemon2.name} attack missed! ${gameData.pokemon1.name} had time to heal. It is now ${gameData.pokemon1.name}'s turn`;
+            adjustHealth(POKEMON1, HEALTHREGAIN);
 
-//         }
-//         health.className="appearing";
-//         heal_up.play();
-//         setTimeout(function(){
-//             health.className="attack_hidden";
-//             changeTurn();
-//         }, 2000);
-//     }
-//     else{
-//         //do damage to opponent
-//         let dice_to_change = document.getElementById(`dice_${gameData.roll}_img`)
-//         dice_to_change.src = "./images/" + `dice${gameData.roll}red.png`;
+        }
+        health.className="appearing";
+        heal_up.play();
+        setTimeout(function(){
+            health.className="attack_hidden";
+            changeTurn();
+        }, 2000);
+    }
+    else{
+        //do damage to opponent
+        let dice_to_change = document.getElementById(`dice_${gameData.roll}_img`)
+        dice_to_change.src = "./images/" + `dice${gameData.roll}red.png`;
 
-//         gameData.rolledDice.push(gameData.roll);
-//         gameData.rolledDice = [...new Set(gameData.rolledDice)];
-//         console.log(gameData.rolledDice);
-//         if(gameData.gameTurn == POKEMON1){
-//             game_description.textContent = `${gameData.pokemon1.name}'s attack hit! ${gameData.pokemon2.name} took some damage. It is still ${gameData.pokemon1.name}'s turn`;
-//             adjustHealth(POKEMON2, 20);
-//             flame.className = "bottom_to_top"
-//             fire_attack.play();
-//             setTimeout(function(){
-//                 flame.className = "attack_hidden"
-//             }, 1000);
-//         }
-//         else{
-//             game_description.textContent = `${gameData.pokemon2.name}'s attack hit! ${gameData.pokemon1.name} took some damage. It is still ${gameData.pokemon2.name}'s turn`;
-//             adjustHealth(POKEMON1, 20);
-//             lightning.className = "bottom_to_top"
-//             electric_attack.play();
-//             setTimeout(function(){
-//                 lightning.className = "attack_hidden"
-//             }, 1000);
-//         }
-//         checkWinningCondition();
-//     }
-// }
+        gameData.rolledDice.push(gameData.roll);
+        gameData.rolledDice = [...new Set(gameData.rolledDice)];
+        console.log(gameData.rolledDice);
+        if(gameData.gameTurn == POKEMON1){
+            game_description.textContent = `${gameData.pokemon1.name}'s attack hit! ${gameData.pokemon2.name} took some damage. It is still ${gameData.pokemon1.name}'s turn`;
+            adjustHealth(POKEMON2, 20);
+            flame.className = "bottom_to_top"
+            fire_attack.play();
+            setTimeout(function(){
+                flame.className = "attack_hidden"
+            }, 1000);
+        }
+        else{
+            game_description.textContent = `${gameData.pokemon2.name}'s attack hit! ${gameData.pokemon1.name} took some damage. It is still ${gameData.pokemon2.name}'s turn`;
+            adjustHealth(POKEMON1, 20);
+            lightning.className = "bottom_to_top"
+            electric_attack.play();
+            setTimeout(function(){
+                lightning.className = "attack_hidden"
+            }, 1000);
+        }
+        checkWinningCondition();
+    }
+}
 
 function checkWinningCondition(){
     if(gameData.pokemon1.health <= 0){
