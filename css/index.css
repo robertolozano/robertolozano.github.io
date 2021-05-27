@@ -121,12 +121,13 @@ body{
 }
 
 #parkBenchPic{
-    width: 50%;
+    width: 75%;
     height: auto;
     border: 10px outset #3583DE;
     border-radius: 180px;
     box-shadow: 0px 0px 5px grey;
     margin-left: 50px;
+    overflow: hidden;
 }
 
 #what_ive_been_up_to{
