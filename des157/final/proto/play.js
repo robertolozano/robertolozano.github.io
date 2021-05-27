@@ -92,7 +92,7 @@ let quitGame = document.getElementById("quit_game");
 
 let footer = document.getElementById("footer");
 
-let screen = document.getElementById("screen");
+let screen = document.getElementById("screen_container");
 
 quitGame.addEventListener("click", function(){
     location.reload();
