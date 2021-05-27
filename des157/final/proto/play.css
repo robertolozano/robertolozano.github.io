@@ -1,0 +1,565 @@
+body{
+    background-color: #D7E3ED;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#container{
+    width: 1366px;
+    height: 768px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+
+}
+
+#container_index{
+    max-width: 1366px;
+    max-height: 768px;
+    position: absolute;
+}
+
+#top_pokemon{
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+#bottom_pokemon{
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.top_left_side{
+    width: 50%;
+    height: 100%;
+}
+
+.pokemon_info{
+    width: 80%;
+    height: auto;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    position: relative;
+    top: 20%;
+    left: 5%;
+}
+
+#pokemon_1_name{
+    padding: 10px 0px 0px 15px;
+    font-size: 40px;
+}
+
+.name_and_health{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#pokemon_2_name{
+    padding: 10px 0px 0px 15px;
+    font-size: 40px;
+}
+
+.health_text{
+    display: flex;
+    font-size: 40px;
+    padding: 10px 0px 0px 15px;
+    margin-right: 20px;
+}
+
+.pokemon_health{
+    width: 93%;
+    height: 30px;
+    background-color: #FF9F9F;
+    border-radius: 20px;
+    border: 4px solid black;
+    margin: 10px 0px 10px 15px;
+}
+
+#pokemon_1_health{
+    position: absolute;
+    width: 93%;
+    height: 30px;
+    background-color: #89CF82;
+    border-radius: 20px;
+    border: 4px solid black;
+    margin: 10px 0px 10px 15px;
+    top: 50px;
+    right: 15px;
+    transition: width 2s;
+    animation-timing-function: ease;
+}
+
+#pokemon_2_health{
+    position: absolute;
+    width: 93%;
+    height: 30px;
+    background-color: #89CF82;
+    border-radius: 20px;
+    border: 4px solid black;
+    margin: 10px 0px 10px 15px;
+    top: 50px;
+    right: 15px;
+    transition: width 2s;
+    animation-timing-function: ease;
+}
+
+.pokemon_display{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+#pokemon_1_art{
+    max-width: 100%;
+    max-height: 100%;
+    left: 30%;
+    top: 0%;
+    z-index: 1;
+    position: absolute;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.hopping_top {
+    animation-name: hopping_top;
+    animation-timing-function: ease;
+}
+
+.hopping_bottom{
+    animation-name: hopping_bottom;
+    animation-timing-function: ease;
+}
+
+@keyframes hopping_top {
+    0%   { transform: scale(1,1)    translateY(0)    rotate(0deg); }
+    10%  { transform: scale(1.1,.9) translateY(0)    rotate(10deg); }
+    30%  { transform: scale(.9,1.1) translateY(-40px)rotate(0deg); }
+    50%  { transform: scale(1,1)    translateY(0)    rotate(-10deg); }
+    100% { transform: scale(1,1)    translateY(0)    rotate(0deg); }
+}
+
+@keyframes hopping_bottom {
+    0%   { transform: scale(1,1)    translateY(0)    rotate(0deg); }
+    10%  { transform: scale(1.1,.9) translateY(0)    rotate(-10deg); }
+    30%  { transform: scale(.9,1.1) translateY(-40px)rotate(0deg); }
+    50%  { transform: scale(1,1)    translateY(0)    rotate(10deg); }
+    100% { transform: scale(1,1)    translateY(0)    rotate(0deg); }
+}
+
+@keyframes fade {
+    0%{opacity: 0;}
+    25%{opacity: 0;}
+    80%{opacity: 0.6;}
+    100%{opacity: 1;}
+}
+
+#pokemon_2_art{
+    max-width: 100%;
+    max-height: 100%;
+    left: 30%;
+    top: 0%;
+    z-index: 1;
+    position: absolute;
+    animation-delay: 0.75s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.pokemon_ground{
+    position: absolute;
+    height: 100px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#menu{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    border: 9px solid black;
+    border-radius: 50px;
+}
+
+#game_text{
+    width: 75%;
+    background-color: white;
+    height: 100%;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 38px 0px 0px 38px;
+    border-right: 6px solid black;
+}
+
+#dice_area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#dice_images{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#dice_images img{
+    width: 100px;
+    height: 100px;
+}
+
+#dice_roll{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-left: 6px solid black;
+    justify-self: flex-end;
+}
+
+#dice_roll img{
+    width: 100px;
+    height: 100px;
+}
+
+#game_description_container{
+    width: 100%;
+    border-top: 6px solid black;
+    height: 50%;
+}
+
+#game_description {
+    padding: 20px 30px 20px 30px;
+}
+
+#game_options{
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    justify-content: space-around;
+    border-radius: 0px 40px 40px 0px;
+}
+
+#game_options button {
+    background:none;
+    border: none;
+    font-size: 40px;
+}
+
+#lightning{
+    position: absolute;
+    top: 10%;
+    left: 59%;
+    width: 100px;
+    animation-duration: 1s;
+}
+
+#flame{
+    position: absolute;
+    top: 10%;
+    left: 59%;
+    width: 100px;
+    animation-duration: 1s;
+}
+
+#health{
+    position: absolute;
+    top: 5%;
+    right: 34%;
+    width: 120px;
+    z-index: 2;
+    animation-duration: 2s;
+}
+
+.top_to_bottom {
+    visibility: visible;
+    animation-name: top_to_bottom;
+    animation-timing-function: ease;
+}
+
+.bottom_to_top {
+    visibility: visible;
+    animation-name: bottom_to_top;
+    animation-timing-function: ease;
+}
+
+.attack_hidden {
+    visibility: hidden;
+}
+
+.appearing{
+    visibility: visible;
+    animation-name: appearing;
+    animation-timing-function: ease;
+}
+
+@keyframes appearing {
+    0%   { transform: scale(1,1)    translateY(0)    rotate(0deg); opacity: 0%;}
+    10%  { transform: scale(1.1,.9) translateY(0)    rotate(10deg); }
+    30%  { transform: scale(.9,1.1) translateY(-40px)rotate(0deg); }
+    50%  { transform: scale(1,1)    translateY(0)    rotate(-10deg); }
+    100% { transform: scale(1,1)    translateY(0)    rotate(0deg); }
+}
+
+@keyframes bottom_to_top {
+    0%{
+        transform: translateX(-400px) translateY(200px) rotate(180deg);        
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(180deg);
+        visibility: hidden;
+    }
+}
+
+#game_menu_overlay{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border: 14px solid black;
+    z-index: 2;
+    top: 10%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.game_menu_overlay_visible{
+    visibility: visible;
+}
+
+.game_menu_overlay_invisible{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+#game_menu_overlay button{
+    font-size: 50px;
+    background: #60a5d3;
+    border-radius: 30px;
+    border: 5px solid black;
+    padding: 20px;
+}
+
+#game_menu_overlay button:hover{
+    background: #bcf5fc;
+}
+
+#winner_overlay{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    border: 10px solid black;
+    z-index: 2;
+    top: 5%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+}
+
+#winner_overlay img{
+    height: 60%;
+    width: 80%;
+    align-self: center;
+}
+
+#winner_overlay p{
+    justify-self: center;
+    align-self: center;
+    font-size: 40px;
+}
+
+#winner_overlay button{
+    padding: 20px;
+    font-size: 40px;
+    width: 80%;
+    align-self: center;
+    background: none;
+    border: 5px solid black;
+    border-radius: 40px;
+    margin: 30px 0px 0px 0px;
+}
+
+#winner_overlay button:hover{
+    padding: 20px;
+    font-size: 40px;
+    width: 80%;
+    align-self: center;
+    background: #bcf5fc;
+    border: 5px solid black;
+    border-radius: 40px;
+    margin: 30px 0px 0px 0px;
+}
+
+
+
+
+
+#title_index{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#title_index img{
+    max-height: 100%;
+}
+
+#lower_half_index{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#game_rules_index{
+    width: 50%;
+    font-size: 29px;
+}
+
+#menu_index{
+    width: 50%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu_box_index{
+    width: 90%;
+    /* height: 50%; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 7px solid black;
+    border-radius: 12px;
+}
+
+#menu_box_index p{
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+#menu_index button{
+    width: 20%;
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 30px 50px 30px 15px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#menu_box_index input{
+    width: 40%;
+    margin-left: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 4px solid black;
+}
+
+
+
+
+footer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 30px 0px;
+    font-size: 20px;
+    /* background-color: red; */
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+}
+
+#email{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding-right: 10px;
+}
+
+#html{
+    border-right: 3px solid rgb(219, 161, 36);
+    padding: 0px 15px 0px 10px;
+}
+
+#css{
+    padding: 0px 15px 0px 10px;
+    border-right: 3px solid rgb(219, 161, 36);
+}
+
+#sources{
+    padding: 0px 0px 0px 10px;
+}
+
+
+#screen{
+    width: 1000px;
+    height: 500px;
+    background-color: rgb(126, 163, 196);
+    border: 15px solid black;
+    border-radius: 40px;
+    position: absolute;
+    top: 10%;
+    background-image: url(./images/pixil-frame-0.png);
+    background-position: center; /* Center the image */
+    background-size: 1000px 500px;
+    background-repeat: no-repeat;
+}
+#screen_container{
+    display: flex;
+    width: 1366px; 
+    height: 768px; 
+    position: relative;
+    align-self: center;
+    justify-content: center;
+}
+#sprite_img{
+    width: 150px;
+    position: absolute;
+    left: 0px;
+}
+#sprite_enemy_1{
+    width: 180px;
+    position: absolute;
+    top: 300px;
+    left: 650px;
+}

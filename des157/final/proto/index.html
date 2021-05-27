@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Pokemon</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="reset.css" rel="stylesheet">
+	<link href="play.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="screen_container" class="visible">
+        <div id="screen">
+            <img id="sprite_img" src="images/sprite1.png"></img>
+            <img id="sprite_enemy_1" src="images/enemy1.png"></img>
+        </div>
+    </div>
+
+    <div id="container_index" class="invisible">
+        <div id="title_index">
+            <img alt="Game Of Pokemon Title" src="./images/gameOfPokemon.png">
+        </div>
+        <div id="lower_half_index">
+            <div id="game_rules_index">
+                <h2>Game Rules:</h2>
+                <h3>
+                    <br>
+                    Each player will play as a pokemon.
+                    At each round you will have 2 options:<br><br>
+                    1. Use Turn<br>
+                    -If you hit, then the opponent will lose health.<br>
+                    -If you miss, then it becomes the opponent’s   
+                    turn<br>
+                    -If your Pokemon becomes distracted, the   
+                    opponent has time to heal, and it becomes 
+                    their turn.<br><br>
+                    2. Quit Game<br>
+                    -You will go back to menu screen and game 
+                    will end.<br><br>
+                    First to deplete opponent’s health wins!
+                </h3>
+            </div>
+
+            <div id="menu_index">
+                <div id="menu_box_index" class="invisible">
+                    <p>Player 1</p>
+                    <input>
+                    <p>Player 2</p>
+                    <input>
+                </div>
+                <button id="start_game_button">START!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="container" class="invisible">
+
+        <audio id="background_music">
+            <source src="./sounds/background2.mp3" type="audio/mp3">
+        </audio>
+        <audio id="fire_attack">
+            <source src="./sounds/fireattack.wav" type="audio/wav">
+        </audio>
+        <audio id="electric_attack">
+            <source src="./sounds/electric_attack.wav" type="audio/wav">
+        </audio>
+        <audio id="heal_up">
+            <source src="./sounds/172589__qubodup__health-potion-166188-drminky-potion-drink-regen.flac" type="audio/flac">
+        </audio>
+        <div id="game_menu_overlay" class="game_menu_overlay_invisible">
+            <button id="toggleVolume">Mute/Unmute</button>
+            <button id="quit_game">Quit Game</button>
+            <button id="close_menu_button">Close Menu</button>
+        </div>
+        <div id="winner_overlay" class="game_menu_overlay_invisible">
+            <img alt="charmander" id="winner_overlay_img" src="images/charmander.png">
+            <p id="winner_overlay_name" >Placeholder won!</p>
+            <button id="winner_overlay_reset" >Back to Start!</button>
+        </div>
+
+
+        <div id="top_pokemon">
+            <div class="top_left_side">
+                <div class="pokemon_info">
+                    <div class="name_and_health">
+                        <p id="pokemon_2_name">Placeholder</p>
+                        <p id="pokemon_2_health_text" class="health_text">100/100</p>
+                    </div>
+                    <div class="pokemon_health">
+                    </div>
+                    <div id="pokemon_2_health" class="pokemon_health_remaining">
+                    </div>
+                </div>
+            </div>
+            <div class="pokemon_display">
+                <img alt="pikachu" id="pokemon_2_art" class="hopping_top" src="images/enemy1.png">
+                <img alt="ellipse" class="pokemon_ground" src="./images/Ellipse.png">
+            </div>
+        </div>
+
+        <div id="bottom_pokemon">
+            <div class="pokemon_display">
+                <img alt="charmander" id="pokemon_1_art"  class="hopping_bottom" src="images/sprite1.png">
+                <img alt="ellipse" class="pokemon_ground" src="./images/Ellipse.png">
+            </div>
+            <div class="top_left_side">
+                <div class="pokemon_info">
+                    <div class="name_and_health">
+                        <p id="pokemon_1_name" class="pokemon_name">Placeholder</p>
+                        <p id="pokemon_1_health_text" class="health_text">100/100</p>
+                    </div>
+                    <div class="pokemon_health">
+                    </div>
+                    <div id="pokemon_1_health" class="pokemon_health_remaining">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu">
+            <div id="game_text">
+                <!-- <div id="dice_area">
+                    <div id="dice_images">
+                        <img alt="dice1blue" id="dice_1_img" src="images/dice1blue.png">
+                        <img alt="dice2blue" id="dice_2_img" src="images/dice2blue.png">
+                        <img alt="dice3blue" id="dice_3_img" src="images/dice3blue.png">
+                        <img alt="dice4blue" id="dice_4_img" src="images/dice4blue.png">
+                        <img alt="dice5blue" id="dice_5_img" src="images/dice5blue.png">
+                        <img alt="dice6blue" id="dice_6_img" src="images/dice6blue.png">
+                    </div>
+                  
+                    <div id="dice_roll">
+                        <img alt="dice1green" id="dice_roll_img" src="images/dice1green.png">
+                    </div>
+                </div> -->
+                <div id="game_description_container">
+                    <p id="game_description"></p>
+                </div>
+            </div>
+            <div id="game_options">
+                <button id="use_turn">Roll Again</button>
+                <button id="pass_turn">Pass Turn</button>
+                <button id="game_menu_button">Game Menu</button>
+            </div>
+        </div>
+        <img alt="lightning" id="lightning" class="attack_hidden" src="images/lightning2.png">
+        <img alt="flame" id="flame" class="attack_hidden" src="images/flame.png">
+        <img alt="health" id="health" class="attack_hidden" src="images/health.png">
+    </div>
+
+    <footer id="footer">
+        <nav>
+            <a id="email" href="mailto:rlozano@ucdavis.edu">Email</a>
+            <a id="html" href="https://validator.w3.org/check?uri=https://robertolozano.github.io/des157/studio3/play.html">Valid HTML 5</a>
+            <a id="css" href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+            <a id="sources" href="./sources.html">Sources</a>
+        </nav>
+    </footer>
+
+    <script src="play.js"></script>
+</body>
+</html>

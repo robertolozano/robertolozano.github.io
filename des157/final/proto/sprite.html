@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            height: 1000px;
+            width: 100%;
+        }
+        #sprite_img{
+            width: 150px;
+            position: absolute;
+            left: 0px;
+            border: 1px solid black;
+        }
+        #screen{
+            justify-self: center;
+            align-self: center;
+            width: 1000px;
+            height: 800px;
+            background-color: rgb(126, 163, 196);
+            border: 15px solid black;
+            border-radius: 40px;
+            position: relative;
+        }
+        #sprite_enemy_1{
+            width: 180px;
+            border: 1px solid black;
+            position: absolute;
+            top: 300px;
+            left: 650px;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <img id="sprite_img" src="images/sprite1.png"></img>
+
+        <img id="sprite_enemy_1" src="images/enemy1.png"></img>
+    <div>
+    <script>
+        let spriteArray = ["images/sprite1.png","images/sprite2.png","images/sprite1.png","images/sprite3.png"]
+        let spriteRevArray = ["images/spriterev1.png","images/spriterev2.png","images/spriterev1.png","images/spriterev3.png"]
+        let spriteDownArray = ["images/spriteDown1.png","images/spriteDown2.png","images/spriteDown1.png","images/spriteDown3.png"]
+        let spriteUpArray = ["images/spriteUp1.png","images/spriteUp2.png","images/spriteUp1.png","images/spriteUp3.png"]
+
+        let currentSprite = 0;
+
+        let movementAmountX = 10
+        let currentPosX = 0;
+        let currentPosY = 0;
+        document.addEventListener('keypress', moveCharacter);
+
+        function moveCharacter(e){
+            // console.log(e);
+            currentSprite += 1;
+            if(currentSprite > 3){
+                currentSprite = 0;
+            }
+            let sprite = document.getElementById("sprite_img");
+            if(e.key == "d"){
+                currentPosX = currentPosX + movementAmountX;
+                if(currentPosX > 890){
+                    currentPosX = 890;
+                }
+                sprite.style.left = `${currentPosX}px`;
+                sprite.src = spriteArray[currentSprite];
+                sprite.style.width = "150px"
+            }
+            if(e.key == "a"){
+                currentPosX = currentPosX - movementAmountX;
+                if(currentPosX < -30){
+                    currentPosX = -30;
+                }
+                sprite.style.left = `${currentPosX}px`;
+                sprite.src = spriteRevArray[currentSprite];
+                sprite.style.width = "150px"
+            }
+            if(e.key == "s"){
+                currentPosY = currentPosY + movementAmountX;
+                if(currentPosY > 690){
+                    currentPosY = 690;
+                }
+                sprite.style.top = `${currentPosY}px`;
+                sprite.src = spriteDownArray[currentSprite];
+                sprite.style.width = "130px"
+            }
+            if(e.key == "w"){
+                currentPosY = currentPosY - movementAmountX;
+                if(currentPosY < -29){
+                    currentPosY = -24;
+                }
+                sprite.style.top = `${currentPosY}px`;
+                sprite.src = spriteUpArray[currentSprite];
+                sprite.style.width = "130px"
+            }
+            if(e.key == " "){
+                console.log("space was pressed");
+                if(currentPosX > 570 && currentPosX < 770){
+                    if(currentPosY > 220 && currentPosY < 440){
+                        console.log("Begin battle!")
+                    }
+                }
+            }
+            console.log("X: ", currentPosX, "Y: ", currentPosY);
+        }
+    </script>
+</body>
+</html>
