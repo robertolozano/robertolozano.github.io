@@ -58,7 +58,7 @@ let pokemon2Name = document.getElementById("pokemon_2_name");
 let pokemon1Art = document.getElementById("pokemon_1_art");
 let pokemon2Art = document.getElementById("pokemon_2_art");
 
-// let diceRoll = document.getElementById("dice_roll_img");
+let diceRoll = document.getElementById("dice_roll_img");
 
 let game_description = document.getElementById("game_description");
 
