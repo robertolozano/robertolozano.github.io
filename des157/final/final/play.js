@@ -36,7 +36,7 @@ let gameData = {
             name: "Self Doubt",
             health: 100,
             pokemon_art: "images/spriterev1.png",
-            pokemon_art_highlighted: "images/spriteRev1_2Highlighted.png"
+            pokemon_art_highlighted: "images/spriterevHighlighted.png"
         }
     ]
 };
