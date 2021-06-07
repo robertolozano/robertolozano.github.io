@@ -1,0 +1,112 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 1366px;
+    height: 768px;
+    background-color: rgb(218, 216, 205);
+}
+
+#summary{
+    background-color: white;
+    margin: 20px 0px 20px 0px;
+    width:50%;
+    align-self: center;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 0px 20px 10px 20px;
+}
+
+#comparison{
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+}
+
+#comparison div p{
+    font-size: 20px;
+}
+
+#comparison div figure{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#comparison div figure img{
+    width: 90%;
+    border: 5px solid black;
+    border-radius: 500px;
+    height: 90%;
+}
+
+#comparison div a{
+    text-decoration: none;
+    color: black;
+}
+
+#comparison div{
+    background-color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 0px 20px 0px 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+#goals_and_design{
+    background-color: white;
+    margin: 20px 0px 20px 0px;
+    width: 80%;
+    align-self: center;
+    font-size: 25px;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 0px 20px 10px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#goals_and_design div{
+    width: 40%;
+}
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px 80px 0px;
+    font-size: 20px;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: rgb(70, 69, 69);
+    font-size: 23px;
+}
+
+#email{
+    border-right: 3px solid white;
+    padding-right: 10px;
+}
+
+#html{
+    border-right: 3px solid white;
+    padding: 0px 15px 0px 10px;
+}
+
+#css{
+    padding: 0px 0px 0px 10px;
+}
