@@ -71,3 +71,34 @@ body{
 #goals_and_design div{
     width: 40%;
 }
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px 80px 0px;
+    font-size: 20px;
+}
+
+footer nav a{
+    text-decoration: none;
+    color: rgb(70, 69, 69);
+    font-size: 23px;
+}
+
+#email{
+    border-right: 3px solid white;
+    padding-right: 10px;
+}
+
+#html{
+    border-right: 3px solid white;
+    padding: 0px 15px 0px 10px;
+}
+
+#css{
+    padding: 0px 0px 0px 10px;
+}
