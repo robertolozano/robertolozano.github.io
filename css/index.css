@@ -371,13 +371,19 @@ body{
     .project_description{
         padding: 20px 0px 0px 0px;
     }
+    #parkBenchPic{
+        margin-left: 0px;
+    }
 
 }
 
 /* Mobile */
 @media screen and (max-width: 480px) {
     body {
-        /* background-color: lightgreen; */
+        background-color: lightgreen;
+    }
+    #parkBenchPic{
+        margin-left: 0px;
     }
 }
 
