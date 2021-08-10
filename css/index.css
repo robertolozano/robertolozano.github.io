@@ -167,7 +167,8 @@ body{
 #project_pic1,
 #project_pic2,
 #project_pic3,
-#project_pic4{
+#project_pic4,
+#project_pic5{
     width: 50%;
     border: 10px outset #3583DE;
     border-radius: 80px;
@@ -179,6 +180,12 @@ body{
 
 #project_pic3{
     background-color: rgb(185, 214, 223);
+}
+
+#project_pic5{
+    background-color: rgb(255, 255, 255);
+
+    width: 50%;
 }
 
 
