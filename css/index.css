@@ -168,7 +168,8 @@ body{
 #project_pic2,
 #project_pic3,
 #project_pic4,
-#project_pic5{
+#project_pic5,
+#project_pic6{
     width: 50%;
     border: 10px outset #3583DE;
     border-radius: 80px;
@@ -184,9 +185,13 @@ body{
 
 #project_pic5{
     background-color: rgb(64, 145, 145);
-
     width: 50%;
 }
+
+#project_pic6{
+    background-color: rgb(148, 200, 202);
+}
+
 
 
 #what_ive_been_up_to_title{
