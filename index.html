@@ -1,233 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Roberto Lozano</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Roberto Lozano Jr's Personal Website">   
-    <link type="text/css" rel="stylesheet" href="css/reset.css">
-    <link type="text/css" rel="stylesheet" href="css/index.css">    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Roberto Lozano Jr's Personal Website" />
+    <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-  <div id="nav">
-    <div id="left_nav">
-      <p id="RLJ_Logo">RLJ</p>
-      <a href="https://github.com/robertolozano">
-        <img id="github_pic" src="images/github.png" alt="githubLogo">
-      </a>
-      <a href="https://www.linkedin.com/in/roberto-lozano-272503163/">
-        <img id="linkedin_pic" src="images/linkedin.png" alt="linkedinLogo">
-      </a>
-    </div>
-    <div id="right_nav">
-      <a class="custom-btn btn-3" href="./index.html"><span>Home</span></a>
-      <a class="custom-btn btn-3" href="./index.html"><span>Portfolio</span></a>
-      <a class="custom-btn btn-3" href="#what_ive_been_up_to_title"><span>What I'm up to</span></a>
-    </div>
-  </div>
-
-
-  <div id="me_section">
-    <div id="me_section_left">
-      <p id="me_section_left_name">Roberto Lozano Jr.</p>
-      <p id="me_section_left_name2">Recent computer science graduate passionate about web apps and web development.</p>
-    </div>
-
-    <div id="me_section_right">
-      <img id="parkBenchPic" src="images/gradpic.jpg" alt="pictureOfRoberto">
-    </div>
-  </div>
-
-  <div id="what_ive_been_up_to">
-    <p id="what_ive_been_up_to_title">What I've been up to</p>
-    
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic1" src="images/hungr.png" alt="projectPicture">
+  <body>
+    <div id="nav">
+      <div id="left_nav">
+        <p id="RLJ_Logo">RLJ</p>
+        <a href="https://github.com/robertolozano">
+          <img id="github_pic" src="images/github.png" alt="githubLogo" />
+        </a>
+        <a href="https://www.linkedin.com/in/roberto-lozano-272503163/">
+          <img id="linkedin_pic" src="images/linkedin.png" alt="linkedinLogo" />
+        </a>
       </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">Hungr</p>
-        <p class="project_description">Hungr is a web app that solves the problem of not being able
-          to decide what to eat. Similar to the tinder style of swiping,
-          users will swipe on which restaurants they like to decide on
-          a winner.</p>
-
-        <ul class="tech_stack">
-          <li>•HTML</li>
-          <li>•CSS</li>
-          <li>•Javascript</li>
-          <li>•Node</li>
-          <li>•Yelp API</li>
-          <li>•Socket.IO</li>
-          <li>•Firebase Authentication</li>
-          <li>•Firebase Database</li>
-        </ul>  
-
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/robertolozano/RestaurantTinder';">Github</button>
-          </div>
-
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://restaurant-tinder-app.herokuapp.com/';">Live Site</button>
-          </div>
-        </div>
+      <div id="right_nav">
+        <a class="custom-btn btn-3" href="./index.html"><span>Home</span></a>
+        <a class="custom-btn btn-3" href="./index.html"
+          ><span>Portfolio</span></a
+        >
+        <a class="custom-btn btn-3" href="#what_ive_been_up_to_title"
+          ><span>What I'm up to</span></a
+        >
       </div>
     </div>
 
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic6" src="images/Group 1 (4).png" alt="projectPicture">
-      </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">Wavify</p>
-        <p class="project_description">React app utilizing the Spotify API to retrieve tracks and extract the audio analysis data in order to add a music visualizer using d3 </p>
-
-        <ul class="tech_stack">
-          <li>•React</li>
-          <li>•React Router</li>
-          <li>•Javascript</li>
-          <li>•CSS</li>
-          <li>•Spotify API</li>
-          <li>•d3</li>
-        </ul>  
-
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/robertolozano/SpotifyVisualizer';">Github</button>
-          </div>
-
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://wavify.netlify.app/';">Live Site</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic5" src="images/github_cat.png" alt="projectPicture">
-      </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">Github Battle (React JS)</p>
-        <p class="project_description">Project built in React 
-          that fetches Github data to display popular Repos and
-          compares Github accounts against one another.
+    <div id="me_section">
+      <div id="me_section_left">
+        <p id="me_section_left_name">Roberto Lozano Jr.</p>
+        <p id="me_section_left_name2">
+          Recent computer science graduate passionate about web apps and web
+          development.
         </p>
+      </div>
 
-        <ul class="tech_stack">
-          <li>•React JS</li>
-          <li>•React Router</li>
-          <li>•Github API</li>
-          <li>•CSS</li>
-          <li>•Javascript</li>
-          <li>•Webpack</li>
-        </ul>  
+      <div id="me_section_right">
+        <img
+          id="parkBenchPic"
+          src="images/gradpic.jpg"
+          alt="pictureOfRoberto"
+        />
+      </div>
+    </div>
 
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/robertolozano/GithubBattle';">Github</button>
+    <div id="what_ive_been_up_to">
+      <p id="what_ive_been_up_to_title">What I've been up to</p>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img id="project_pic1" src="images/hungr.png" alt="projectPicture" />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">Hungr</p>
+          <p class="project_description">
+            Hungr is a web app that solves the problem of not being able to
+            decide what to eat. Similar to the tinder style of swiping, users
+            will swipe on which restaurants they like to decide on a winner.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•HTML</li>
+            <li>•CSS</li>
+            <li>•Javascript</li>
+            <li>•Node</li>
+            <li>•Yelp API</li>
+            <li>•Socket.IO</li>
+            <li>•Firebase Authentication</li>
+            <li>•Firebase Database</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/RestaurantTinder';"
+              >
+                Github
+              </button>
+            </div>
+
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://hungr-8c75c7ba516f.herokuapp.com/';"
+              >
+                Live Site
+              </button>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://elastic-easley-6422df.netlify.app/';">Live Site</button>
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic_new1"
+            src="images/medicalterminology.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">
+            Improving Medical Terminology With Word Embeddings
+          </p>
+          <p class="project_description">
+            Improved English-to-Spanish medical term translations by aligning
+            FastText embeddings using Orthogonal Procrustes Analysis. Achieved
+            higher semantic accuracy than Google Translate and visualized word
+            vectors with t-SNE.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Python</li>
+            <li>•FastText</li>
+            <li>•NumPy</li>
+            <li>•t-SNE</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/WordEmbeddingTranslation';"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic_new2"
+            src="images/sentimentAnalysis.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">
+            Sentiment Analysis with Neural Networks and TF-IDF
+          </p>
+          <p class="project_description">
+            Trained a PyTorch-based sentiment classifier using TF-IDF
+            vectorization and k-fold cross-validation. Preprocessing included
+            bi-grams, stop-word removal, and dropout regularization.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Python</li>
+            <li>•PyTorch</li>
+            <li>•TF-IDF</li>
+            <li>•scikit-learn</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/Sentiment-Analysis-with-Neural-Networks-and-TF-IDF';"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic_new3"
+            src="images/collaborativefiltering.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">
+            Collaborative Filtering Recommendation System
+          </p>
+          <p class="project_description">
+            Built a hybrid recommendation engine using user-based, item-based,
+            and variance-based collaborative filtering. Implemented similarity
+            metrics and ensemble methods for improved accuracy on sparse
+            datasets.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Python</li>
+            <li>•NumPy</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/Collaborative-Filtering-Recommendation-System';"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic_new4"
+            src="images/SemanticAnalysis.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">
+            Probabilistic Latent Semantic Analysis Implementation
+          </p>
+          <p class="project_description">
+            Implemented the EM algorithm to extract topics from a term-document
+            matrix using PLSA. Built custom preprocessing pipelines and
+            validated insights through log-likelihood convergence.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Python</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/Probabilistic-Latent-Semantic-Analysis-Implementation';"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img id="project_pic6" src="images/wavify.png" alt="projectPicture" />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">Wavify</p>
+          <p class="project_description">
+            React app utilizing the Spotify API to retrieve tracks and extract
+            the audio analysis data in order to add a music visualizer using d3
+          </p>
+
+          <ul class="tech_stack">
+            <li>•React</li>
+            <li>•React Router</li>
+            <li>•Javascript</li>
+            <li>•CSS</li>
+            <li>•Spotify API</li>
+            <li>•d3</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/SpotifyVisualizer';"
+              >
+                Github
+              </button>
+            </div>
+
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://wavify.netlify.app/';"
+              >
+                Live Site
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic5"
+            src="images/githubBattle.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">Github Battle (React JS)</p>
+          <p class="project_description">
+            Project built in React that fetches Github data to display popular
+            Repos and compares Github accounts against one another.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•React JS</li>
+            <li>•React Router</li>
+            <li>•Github API</li>
+            <li>•CSS</li>
+            <li>•Javascript</li>
+            <li>•Webpack</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/GithubBattle';"
+              >
+                Github
+              </button>
+            </div>
+
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://elastic-easley-6422df.netlify.app/';"
+              >
+                Live Site
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img id="project_pic2" src="images/lStore.png" alt="projectPicture" />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">QueCC L-Store Database</p>
+          <p class="project_description">
+            A database built on the L-Store design by UC Davis Professor Sadoghi
+            which allows for fast read and writes. Uses QueCC concurrency
+            control which allows for a contentionless design when operating
+            transactions.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Python</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/p3terlo/lstore_db';"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img
+            id="project_pic3"
+            src="images/sprite3.png"
+            alt="projectPicture"
+          />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">Design Course - Final Project</p>
+          <p class="project_description">
+            A interactive website, I created as a final project for my upper
+            division Design Course, which shows off a variety of interactive
+            elements. The project is set up as a Pokemon like game that follows
+            my journey through college.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•HTML</li>
+            <li>•CSS</li>
+            <li>•Javascript</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/robertolozano/robertolozano.github.io/tree/DES157A/des157/final/final';"
+              >
+                Github
+              </button>
+            </div>
+
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://robertolozano.github.io/des157/final/final/index.html';"
+              >
+                Live Site
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div id="project_pic_div">
+          <img id="project_pic4" src="images/trivio.png" alt="projectPicture" />
+        </div>
+        <div class="project_title_and_desc">
+          <p class="project_title">Triv-io App</p>
+          <p class="project_description">
+            An app for quickly setting up trivia games and adding friends across
+            the world to play against in fun, competitive matches.
+          </p>
+
+          <ul class="tech_stack">
+            <li>•Swift</li>
+            <li>•Firebase Authentication</li>
+            <li>•Firebase Database</li>
+          </ul>
+
+          <div class="button_section">
+            <div class="button-wrapper">
+              <button
+                class="button-project-link"
+                onclick="location.href='https://github.com/ECS189E/project-w21-triv-io';"
+              >
+                Github
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic2" src="images/LStore.png" alt="projectPicture">
-      </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">QueCC L-Store Database</p>
-        <p class="project_description">A database built on the L-Store design by UC Davis Professor 
-          Sadoghi which allows for fast  read and writes. Uses QueCC 
-          concurrency control which allows for a contentionless design
-          when operating transactions.</p>
-          
-        <ul class="tech_stack">
-          <li>•Python</li>
-        </ul>  
-
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/p3terlo/lstore_db';">Github</button>
-          </div>
-        </div>
-
-        </div>
-    </div>
-
-
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic3" src="images/sprite3.png" alt="projectPicture">
-      </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">Design Course - Final Project</p>
-        <p class="project_description">A interactive website, I created as a final project
-          for my upper division Design Course, which shows off a variety of interactive elements.
-          The project is set up as a Pokemon like game that follows my journey through college.
-        </p>
-
-        <ul class="tech_stack">
-          <li>•HTML</li>
-          <li>•CSS</li>
-          <li>•Javascript</li>
-        </ul>  
-
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/robertolozano/robertolozano.github.io/tree/DES157A/des157/final/final';">Github</button>
-          </div>
-
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://robertolozano.github.io/des157/final/final/index.html';">Live Site</button>
-          </div>
-        </div>
-
-        </div>
-    </div>
-
-
-
-    <div class="project">
-      <div id="project_pic_div">
-        <img id="project_pic4" src="images/trivio.png" alt="projectPicture">
-      </div>
-      <div class="project_title_and_desc">
-        <p class="project_title">Triv-io App</p>
-        <p class="project_description">An app for quickly setting up trivia games and adding friends
-          across the world to play against in fun, competitive matches.</p>
-
-        <ul class="tech_stack">
-          <li>•Swift</li>
-          <li>•Firebase Authentication</li>
-          <li>•Firebase Database</li>
-        </ul>  
-
-        <div class="button_section">
-          <div class="button-wrapper">
-            <button class="button-project-link" onclick="location.href='https://github.com/ECS189E/project-w21-triv-io';">Github</button>
-          </div>
-        </div>
-
-        </div>
-    </div>
-  
-  </div>
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="javascript/script.js"></script>
-</body>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="javascript/script.js"></script>
+  </body>
 </html>
