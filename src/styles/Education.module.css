@@ -1,0 +1,193 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* Compact: degrees sit side by side so both are visible without scrolling. */
+.listCompact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  /* Hug content rather than stretch — degrees carry different amounts of
+     detail, and a half-empty stretched card reads as a rendering bug. */
+  align-items: start;
+  gap: var(--sp-5);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--sh-sm);
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-ring);
+  box-shadow: var(--sh-md);
+}
+
+.cardCompact {
+  padding: var(--sp-6);
+}
+
+/* --- Header ------------------------------------------------------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.cardCompact .header {
+  gap: var(--sp-4);
+  align-items: flex-start;
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-4);
+}
+
+.heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.logo {
+  flex-shrink: 0;
+  object-fit: contain;
+  /* Rounded so opaque marks (the SCU seal is a solid maroon tile) read as a
+     logo chip rather than a raw square. No-ops on transparent logos. */
+  border-radius: var(--r-md);
+}
+
+.monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cardCompact .logo,
+.cardCompact .monogram {
+  width: 44px;
+  height: 44px;
+}
+
+.degree {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-1);
+}
+
+.cardCompact .degree {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
+
+.school {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--brand);
+}
+
+.cardCompact .school {
+  font-size: var(--fs-sm);
+}
+
+.year {
+  flex-shrink: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.yearInline {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--accent-strong);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* --- Body --------------------------------------------------------------- */
+
+.description {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+}
+
+.cardCompact .description {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+}
+
+.coursework {
+  margin-top: var(--sp-6);
+}
+
+.cardCompact .coursework {
+  margin-top: var(--sp-5);
+}
+
+.courseworkTitle {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-subtle);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+
+.courseworkList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.courseworkItem {
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+/* The remainder, spelled out in the title attribute on hover. */
+.courseworkMore {
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  color: var(--text-subtle);
+  cursor: help;
+}
+
+@media screen and (max-width: 640px) {
+  .card:not(.cardCompact) {
+    padding: var(--sp-6);
+  }
+
+  .card:not(.cardCompact) .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+}

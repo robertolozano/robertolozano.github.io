@@ -1,0 +1,337 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Page hero ---------------------------------------------------------- */
+
+.hero {
+  padding: var(--section-y) 0;
+  background: linear-gradient(180deg, var(--brand-softer), transparent);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: center;
+  gap: clamp(2rem, 1rem + 4vw, 4.5rem);
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+  padding: var(--sp-1) var(--sp-4);
+  border-radius: var(--r-full);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.pageTitle {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--sp-5);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-snug);
+  font-weight: 500;
+  color: var(--text);
+  max-width: 58ch;
+  margin-bottom: var(--sp-5);
+}
+
+.body {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+  max-width: 66ch;
+  margin-bottom: var(--sp-4);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.heroImageWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-lg);
+}
+
+/* --- Section shells ----------------------------------------------------- */
+
+.section,
+.sectionAlt {
+  padding: var(--section-y) 0;
+}
+
+.sectionAlt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionInner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.sectionHeader {
+  margin-bottom: var(--sp-10);
+}
+
+.sectionTitle {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* --- Skills ------------------------------------------------------------- */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: var(--sp-5);
+}
+
+.skillCategory {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--sh-sm);
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease-out);
+}
+
+.skillCategory:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-ring);
+  box-shadow: var(--sh-md);
+}
+
+.skillCategoryTitle {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--brand);
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.skillItem {
+  position: relative;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  padding-left: var(--sp-5);
+}
+
+.skillItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
+}
+
+.certificationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--r-full);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-ring);
+  color: var(--accent-strong);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+/* --- Passions ----------------------------------------------------------- */
+
+.passionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--sp-5);
+}
+
+.passionCard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8) var(--sp-6) var(--sp-6);
+  box-shadow: var(--sh-sm);
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease-out);
+}
+
+/* Accent rule across the top of each card. */
+.passionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.passionCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-ring);
+  box-shadow: var(--sh-lg);
+}
+
+.passionCard:hover::before {
+  transform: scaleX(1);
+}
+
+.passionTitle {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-3);
+}
+
+.passionDescription {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+}
+
+/* --- Contact ------------------------------------------------------------ */
+
+.contactSection {
+  padding: var(--section-y) var(--gutter);
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-12) var(--sp-8);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--sh-md);
+}
+
+.contactTitle {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--sp-3);
+}
+
+.contactText {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 52ch;
+  margin-bottom: var(--sp-6);
+}
+
+.contactLink {
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  color: var(--brand);
+  border-bottom: 2px solid transparent;
+  word-break: break-word;
+  transition: border-color var(--dur) var(--ease-out);
+}
+
+.contactLink:hover {
+  border-bottom-color: var(--brand);
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+
+@media screen and (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .heroContent {
+    align-items: center;
+    order: 2;
+  }
+
+  .heroImageWrap {
+    order: 1;
+  }
+
+  .profileImage {
+    max-width: 220px;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .sectionHeader {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contactCard {
+    padding: var(--sp-10) var(--sp-5);
+  }
+}

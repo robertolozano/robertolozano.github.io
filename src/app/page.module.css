@@ -1,0 +1,105 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Section shells ----------------------------------------------------- */
+
+.section,
+.sectionAlt {
+  padding: var(--section-y) 0;
+}
+
+/* Alternating band gives the long page a rhythm without hard rules. */
+.sectionAlt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionInner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--sp-12);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--sp-3);
+  padding: var(--sp-1) var(--sp-4);
+  border-radius: var(--r-full);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--sp-3);
+}
+
+.sectionSubtitle {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 56ch;
+}
+
+/* --- Project grid ------------------------------------------------------- */
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: var(--sp-6);
+}
+
+.sectionFooter {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-12);
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--r-full);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.viewAll:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+  box-shadow: var(--sh-md);
+  transform: translateY(-2px);
+}
+
+.viewAll svg {
+  transition: transform var(--dur) var(--ease);
+}
+
+.viewAll:hover svg {
+  transform: translateX(3px);
+}

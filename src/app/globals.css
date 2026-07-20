@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Design tokens
+   Single source of truth for color, type, space, radius, elevation, motion.
+   Light values live on :root; dark overrides live in the two blocks below.
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --brand: #2f7ad4;
+  --brand-strong: #2263ae;
+  --brand-soft: rgba(47, 122, 212, 0.1);
+  --brand-softer: rgba(47, 122, 212, 0.05);
+  --brand-ring: rgba(47, 122, 212, 0.35);
+
+  --accent: #d8842f;
+  --accent-strong: #b26a1e;
+  --accent-soft: rgba(216, 132, 47, 0.12);
+  --accent-ring: rgba(216, 132, 47, 0.4);
+
+  /* Surfaces */
+  --bg: #f6f8fb;
+  --bg-alt: #eef2f8;
+  --surface: #ffffff;
+  --surface-2: #f2f6fb;
+  --border: rgba(16, 34, 54, 0.1);
+  --border-strong: rgba(16, 34, 54, 0.18);
+
+  /* Text */
+  --text: #101f2f;
+  --text-muted: #4f6274;
+  --text-subtle: #78899b;
+  --text-on-brand: #ffffff;
+
+  /* Type scale — fluid, clamps between mobile and desktop */
+  --fs-display: clamp(2.5rem, 1.6rem + 3.6vw, 4rem);
+  --fs-h1: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --fs-h2: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --fs-lg: 1.0625rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.04em;
+
+  /* Spacing — 4px base */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+
+  /* Section rhythm — fluid vertical padding */
+  --section-y: clamp(3.5rem, 2rem + 6vw, 7rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 4rem);
+  --container: 1180px;
+  --measure: 68ch;
+
+  /* Radius */
+  --r-sm: 0.5rem;
+  --r-md: 0.875rem;
+  --r-lg: 1.25rem;
+  --r-xl: 1.75rem;
+  --r-full: 999px;
+
+  /* Elevation — layered, low-opacity */
+  --sh-sm: 0 1px 2px rgba(16, 34, 54, 0.06), 0 1px 3px rgba(16, 34, 54, 0.05);
+  --sh-md: 0 2px 4px rgba(16, 34, 54, 0.04), 0 6px 16px rgba(16, 34, 54, 0.07);
+  --sh-lg: 0 4px 8px rgba(16, 34, 54, 0.05), 0 16px 40px rgba(16, 34, 54, 0.1);
+  --sh-brand: 0 8px 28px rgba(47, 122, 212, 0.25);
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 420ms;
+
+  --header-h: 72px;
+
+  color-scheme: light;
+}
+
+/* Dark theme is opt-in only — light is the default regardless of the OS
+   setting, and applies solely when the toggle sets data-theme="dark". */
+:root[data-theme="dark"] {
+  --brand: #5da4f5;
+  --brand-strong: #85bcff;
+  --brand-soft: rgba(93, 164, 245, 0.14);
+  --brand-softer: rgba(93, 164, 245, 0.07);
+  --brand-ring: rgba(93, 164, 245, 0.45);
+
+  --accent: #f0a95e;
+  --accent-strong: #ffc182;
+  --accent-soft: rgba(240, 169, 94, 0.15);
+  --accent-ring: rgba(240, 169, 94, 0.45);
+
+  --bg: #0b1420;
+  --bg-alt: #0f1c2b;
+  --surface: #14212f;
+  --surface-2: #1a2b3d;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --text: #e9eff6;
+  --text-muted: #a3b5c7;
+  --text-subtle: #7f93a7;
+  --text-on-brand: #08111c;
+
+  --sh-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sh-md: 0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3);
+  --sh-lg: 0 6px 14px rgba(0, 0, 0, 0.4), 0 20px 48px rgba(0, 0, 0, 0.42);
+  --sh-brand: 0 8px 28px rgba(93, 164, 245, 0.22);
+
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   Reset & base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky header. */
+  scroll-padding-top: calc(var(--header-h) + var(--sp-6));
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-size: var(--fs-base);
+  font-weight: 400;
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* Only reachable by keyboard — jumps past the nav to the page content. */
+.skipLink {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  z-index: 200;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--r-sm);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font-weight: 600;
+  transform: translateY(-150%);
+  transition: transform var(--dur) var(--ease);
+}
+
+.skipLink:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--text);
+}

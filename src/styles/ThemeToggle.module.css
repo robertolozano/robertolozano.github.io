@@ -1,0 +1,39 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out);
+}
+
+.toggle:hover {
+  color: var(--brand);
+  border-color: var(--brand-ring);
+  background: var(--brand-soft);
+}
+
+/* Icon visibility mirrors the theme cascade in globals.css: light is the
+   default, dark applies only when the toggle sets data-theme="dark". */
+
+.showInLight {
+  display: block;
+}
+
+.showInDark {
+  display: none;
+}
+
+:root[data-theme='dark'] .showInLight {
+  display: none;
+}
+
+:root[data-theme='dark'] .showInDark {
+  display: block;
+}

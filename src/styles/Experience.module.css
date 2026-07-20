@@ -1,0 +1,184 @@
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: var(--sp-10);
+}
+
+/* Vertical rail, fading out as it descends. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: var(--sp-6);
+  bottom: var(--sp-6);
+  left: 7px;
+  width: 2px;
+  border-radius: var(--r-full);
+  background: linear-gradient(180deg, var(--brand), transparent);
+}
+
+.entry {
+  position: relative;
+  margin-bottom: var(--sp-6);
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  top: var(--sp-8);
+  left: calc(var(--sp-10) * -1);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--brand);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--sh-sm);
+  transition: transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-ring);
+  box-shadow: var(--sh-md);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-6);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.role {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-1);
+}
+
+.company {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--brand);
+}
+
+.employmentType {
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: var(--sp-1);
+}
+
+.dateRange {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.location {
+  font-size: var(--fs-xs);
+  color: var(--text-subtle);
+}
+
+.highlights {
+  margin-bottom: var(--sp-6);
+}
+
+.highlight {
+  position: relative;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+  padding-left: var(--sp-6);
+  margin-bottom: var(--sp-3);
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.highlight:last-child {
+  margin-bottom: 0;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.techItem {
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-full);
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+
+@media screen and (max-width: 760px) {
+  .timeline {
+    padding-left: var(--sp-6);
+  }
+
+  .timeline::before {
+    left: 4px;
+  }
+
+  .marker {
+    left: calc(var(--sp-6) * -1);
+    top: var(--sp-6);
+    width: 12px;
+    height: 12px;
+  }
+
+  .card {
+    padding: var(--sp-5);
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+
+  .meta {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    gap: var(--sp-3);
+  }
+}

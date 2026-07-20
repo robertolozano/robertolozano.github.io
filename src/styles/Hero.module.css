@@ -1,0 +1,254 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 1rem + 5vw, 5.5rem) 0 var(--section-y);
+}
+
+/* Soft radial brand wash behind the headline. */
+.glow {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: min(900px, 90vw);
+  height: min(900px, 90vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--brand-soft) 0%,
+    var(--brand-softer) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* --- Availability pill -------------------------------------------------- */
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  margin-bottom: var(--sp-6);
+  border-radius: var(--r-full);
+  border: 1px solid var(--brand-ring);
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.availabilityDot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.availabilityDot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* --- Copy --------------------------------------------------------------- */
+
+.name {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--sp-2);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-5);
+}
+
+.tagline {
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  color: var(--text);
+  max-width: 34ch;
+  margin-bottom: var(--sp-4);
+}
+
+.description {
+  font-size: var(--fs-base);
+  color: var(--text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 56ch;
+  margin-bottom: var(--sp-8);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-10);
+}
+
+/* --- Quick facts -------------------------------------------------------- */
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6) var(--sp-8);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--border);
+  width: 100%;
+  max-width: 560px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.factValue {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1;
+}
+
+.factLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-subtle);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* --- Portrait ----------------------------------------------------------- */
+
+.portrait {
+  display: flex;
+  justify-content: center;
+}
+
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface-2);
+  box-shadow: var(--sh-lg);
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+/* Subtle brand edge instead of the old bevel border. */
+.portraitFrame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--border);
+  pointer-events: none;
+}
+
+.portraitFrame:hover {
+  transform: translateY(-6px);
+}
+
+.portraitImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+
+@media screen and (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+    order: 2;
+  }
+
+  .portrait {
+    order: 1;
+  }
+
+  .portraitFrame {
+    max-width: 300px;
+  }
+
+  .tagline,
+  .description {
+    max-width: 60ch;
+  }
+
+  .ctaRow,
+  .facts {
+    justify-content: center;
+  }
+
+  .facts {
+    gap: var(--sp-6);
+  }
+
+  .fact {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .facts {
+    gap: var(--sp-5);
+  }
+
+  .portraitFrame {
+    max-width: 240px;
+  }
+}
