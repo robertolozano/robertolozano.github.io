@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label="Roberto Lozano Jr. — home">
+        <Link href="/" className={styles.logo} aria-label="Roberto Lozano Jr., home">
           <span className={styles.logoMark}>RLJ</span>
           <span className={styles.logoText}>Roberto Lozano Jr.</span>
         </Link>

@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className={styles.errorCode}>404</p>
         <h1 className={styles.title}>Page not found</h1>
         <p className={styles.description}>
-          That page doesn&apos;t exist or has been moved. Try the portfolio instead — there&apos;s
+          That page doesn&apos;t exist or has been moved. Try the portfolio instead. There&apos;s
           plenty to look at.
         </p>
         <div className={styles.actions}>

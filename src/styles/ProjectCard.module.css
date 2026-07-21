@@ -22,7 +22,9 @@
 
 .media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  /* Square to match the source art (all project images are 1:1); a wider box
+     with object-fit: cover would crop the top and bottom of every image. */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
@@ -32,7 +34,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   transition: transform var(--dur-slow) var(--ease);
 }
 

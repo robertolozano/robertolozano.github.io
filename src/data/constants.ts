@@ -4,7 +4,7 @@ export const heroData: HeroData = {
   name: "Roberto Lozano Jr.",
   title: "Full Stack Developer",
   tagline:
-    "I build React-based production systems — and the agentic workflows that ship them faster.",
+    "I build React-based production systems, and the agentic workflows that ship them faster.",
   description:
     "3+ years of professional experience building full-stack web applications with React, Node.js, and PostgreSQL. MS in Computer Science with graduate research in NLP and machine learning.",
   image: "gradpic.jpg",
@@ -51,9 +51,9 @@ export const experiences: Experience[] = [
     company: "IntraSync Industrial",
     employmentType: "Contract",
     location: "Remote",
-    dateRange: "Dec 2025 – Jul 2026",
+    dateRange: "Dec 2025 - Jul 2026",
     highlights: [
-      "Built and maintained a full-stack web portal managing the end-to-end construction panel pipeline — estimating, production, inventory, shipping, and accounting.",
+      "Built and maintained a full-stack web portal managing the end-to-end construction panel pipeline spanning estimating, production, inventory, shipping, and accounting.",
       "Implemented WebSocket-based real-time features to keep data in sync across concurrent user sessions.",
       "Managed deployment infrastructure with Docker and Portainer, maintaining containerized API and web service builds on Azure DevOps.",
       "Built custom Claude Code subagents with defined roles, tool scopes, and isolated context windows for code review, test authoring, and codebase exploration.",
@@ -78,7 +78,7 @@ export const experiences: Experience[] = [
     role: "Full Stack Software Developer",
     company: "Walters & Wolf",
     location: "Fremont, CA",
-    dateRange: "Aug 2021 – Feb 2024",
+    dateRange: "Aug 2021 - Feb 2024",
     highlights: [
       "Led development of React-based internal web tools, independently managing front-end systems while contributing to PostgreSQL schema changes and API routing.",
       "Built and maintained shared component libraries, improving reusability across teams and reducing developer onboarding time.",
@@ -104,7 +104,7 @@ export const education: Education[] = [
     id: "scu",
     degree: "Master of Science in Computer Science and Engineering",
     school: "Santa Clara University",
-    dateRange: "Sep 2023 – Jun 2025",
+    dateRange: "Sep 2023 - Jun 2025",
     logo: "SantaClaraSeal.jpg",
     // Fallback if the seal is ever removed.
     monogram: "SCU",
@@ -129,7 +129,7 @@ export const education: Education[] = [
     id: "ucdavis",
     degree: "Bachelor of Science in Computer Science",
     school: "University of California, Davis",
-    dateRange: "Sep 2016 – Jun 2021",
+    dateRange: "Sep 2016 - Jun 2021",
     logo: "512px-The_University_of_California_Davis.svg.png",
     description:
       "Broad CS foundation across algorithms, systems, databases, and networks, with upper-division electives in machine learning, computational linguistics, and web programming. Interactive media design coursework produced the first projects I shipped publicly.",

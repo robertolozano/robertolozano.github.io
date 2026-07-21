@@ -22,7 +22,7 @@ const skillGroups = [
 const passions = [
   {
     title: "Full Stack Product Work",
-    body: "Owning features end to end — schema to API to interface. I care most about the unglamorous parts: edge cases surfaced early, real-time state that stays consistent, and tooling people actually want to use.",
+    body: "Owning features end to end, from schema to API to interface. I care most about the unglamorous parts: edge cases surfaced early, real-time state that stays consistent, and tooling people actually want to use.",
   },
   {
     title: "Agentic Development",
@@ -30,7 +30,7 @@ const passions = [
   },
   {
     title: "NLP & Machine Learning",
-    body: "Graduate research in word embeddings, topic modeling, and recommendation systems. I'm drawn to the evaluation side — proving a model is actually better, not just plausible.",
+    body: "Graduate research in word embeddings, topic modeling, and recommendation systems. I'm drawn to the evaluation side: proving a model is actually better, not just plausible.",
   },
 ];
 
@@ -57,15 +57,15 @@ export default function About() {
             <p className={styles.lead}>
               I&apos;m a full-stack developer with 3+ years of professional
               experience building React-based web applications and the
-              production systems behind them — from construction pipeline
+              production systems behind them, from construction pipeline
               portals to internal tooling used daily by operations teams.
             </p>
             <p className={styles.body}>
               I finished my MS in Computer Science at Santa Clara University in
               2025, where my graduate work focused on NLP and machine learning:
               word embeddings, recommendation systems, and sentiment analysis.
-              More recently I&apos;ve been deep in agentic development workflows
-              — building custom Claude Code subagents with scoped roles and
+              More recently I&apos;ve been deep in agentic development workflows,
+              building custom Claude Code subagents with scoped roles and
               isolated context, orchestrating parallel agents across git
               worktrees, and verifying the output with Playwright before
               anything gets merged.
